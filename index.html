@@ -314,6 +314,13 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
   </div>
 </section>
 
+<section id="baby">
+  <div class="sh"><span class="script">Baby</span><h2>Gear</h2></div>
+  <p>Traveling with little ones? All of our baby gear is in the pantry next to the kitchen. Help yourself to anything you need.</p>
+  <div class="tags"><span>Booster high chair</span><span>2 baby gates</span><span>Play pen</span></div>
+  <p>Please return everything to the pantry before you check out. Thank you!</p>
+</section>
+
 <section id="trash">
   <div class="sh"><span class="script">Trash &amp;</span><h2>Recycling</h2></div>
   <div class="photo" style="aspect-ratio:auto"><img src="img/trash-bins.jpg" alt="Where to put the trash and recycling bins: exit the garage, turn right, and leave both bins at the curb" loading="lazy" style="height:auto"></div>
@@ -355,7 +362,7 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
   <div class="photo"><img src="img/skyline.jpg" alt="Downtown San Diego skyline from Golden Hill" loading="lazy"></div>
   <div class="item"><h3>Step outside</h3><p>The 32nd St Canyon trailhead is right across the street, and the cafes and restaurants of Golden Hill and South Park are just a few minutes away.</p></div>
   <div class="item"><h3>Skip the parking hassle</h3><p>Downtown, Petco Park, and Balboa Park are all under 10 minutes away. On game nights and weekends, a rideshare is usually easier than parking downtown.</p></div>
-  <div class="item"><h3>Traveling with kids?</h3><p>We have a crib, a Pack 'n Play, a booster high chair, and baby gates ready for you.</p></div>
+  <div class="item"><h3>Traveling with kids?</h3><p>We have a booster high chair, two baby gates, and a play pen ready for you in the pantry next to the kitchen. <a href="#baby">Baby gear</a></p></div>
 </section>
 
 <section id="restaurants">
@@ -493,7 +500,7 @@ document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',a
 // App-style views
 const GROUPS={
   home:{title:'Welcome',eyebrow:'Golden Hill Townhome',items:[['welcome','Welcome','home'],['house','The House','sofa'],['host','Your Host','smile']]},
-  stay:{title:'Your Stay',eyebrow:'Everything for the house',desc:'Check-in, WiFi, parking, house rules and how everything works.',items:[['checkin','Check In & Out','key-round'],['wifi','WiFi','wifi'],['directions','Directions & Parking','map-pin'],['rules','House Rules','clipboard-list'],['know','Good to Know','lightbulb'],['bedrooms','Bedrooms','bed-double'],['kitchen','Kitchen','chef-hat'],['amenities','Amenities','sparkles'],['trash','Trash & Recycling','trash-2'],['pets','Pet Policy','paw-print'],['checkout','Before You Go','luggage'],['review','Leave a Review','star']]},
+  stay:{title:'Your Stay',eyebrow:'Everything for the house',desc:'Check-in, WiFi, parking, house rules and how everything works.',items:[['checkin','Check In & Out','key-round'],['wifi','WiFi','wifi'],['directions','Directions & Parking','map-pin'],['rules','House Rules','clipboard-list'],['know','Good to Know','lightbulb'],['bedrooms','Bedrooms','bed-double'],['kitchen','Kitchen','chef-hat'],['amenities','Amenities','sparkles'],['baby','Baby Gear','baby'],['trash','Trash & Recycling','trash-2'],['pets','Pet Policy','paw-print'],['checkout','Before You Go','luggage'],['review','Leave a Review','star']]},
   explore:{title:'Explore',eyebrow:'Golden Hill & San Diego',desc:'Our favorite places to eat, drink, see and do nearby.',items:[['tips','Local Tips','compass'],['restaurants','Restaurants','utensils'],['bars','Bars & Wine','wine'],['eat','Coffee & Casual','coffee'],['see','Places to See','landmark'],['do','Things to Do','waves'],['kids','For Kids','baby'],['around','Getting Around','bus'],['nearest','Nearest Stores','shopping-basket']]},
   help:{title:'Help',eyebrow:'We are a message away',desc:'Emergency info, answers to common questions, or message Justin anytime.',items:[['emergency','Emergency','briefcase-medical'],['faq','FAQ','message-circle-question']]}
 };
