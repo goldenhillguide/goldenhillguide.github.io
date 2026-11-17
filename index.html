@@ -151,6 +151,18 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
 .idxhead h3{margin:0;font:500 26px/1.1 var(--serif)}
 .idxhead a{font:600 12.5px/1 var(--sans);color:var(--tan-d);text-decoration:none}
 .viewtop{height:1px}
+
+.sheet-bg{position:fixed;inset:0;z-index:80;background:rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .2s}
+.sheet-bg.show{opacity:1;pointer-events:auto}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:81;background:#fff;border-radius:22px 22px 0 0;padding:10px 20px calc(18px + env(safe-area-inset-bottom));transform:translateY(105%);transition:transform .25s ease;max-width:720px;margin:0 auto}
+.sheet.show{transform:none}
+.sheet .grab{width:40px;height:5px;border-radius:3px;background:var(--line);margin:0 auto 14px}
+.sheet h4{margin:0 0 4px;font:600 18px/1.3 var(--serif);text-align:center}
+.sheet p{margin:0 0 16px;text-align:center;color:var(--muted);font-size:13px}
+.sheet a,.sheet button{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:52px;border-radius:14px;margin:0 0 8px;font:600 15px/1 var(--sans);text-decoration:none;border:0;cursor:pointer}
+.sheet .apple{background:var(--ink);color:#fff}
+.sheet .google{background:var(--cream);color:var(--ink)}
+.sheet .cancel{background:transparent;color:var(--muted)}
 @media (min-width:700px){
   .grid{grid-template-columns:repeat(4,1fr)}
   .hero h1{font-size:84px}
@@ -447,6 +459,15 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
   <a class="tab" data-tab="help" href="#help"><i data-lucide="life-buoy"></i><span>Help</span></a>
   <a class="tab" href="https://www.airbnb.com/guest/messages"><i data-lucide="message-circle"></i><span>Message</span></a>
 </nav>
+<div class="sheet-bg" id="sheetBg"></div>
+<div class="sheet" id="mapSheet" role="dialog" aria-label="Open directions">
+  <div class="grab"></div>
+  <h4>Open in Maps</h4>
+  <p id="mapPlace"></p>
+  <a class="apple" id="appleLink" href="#"><i data-lucide="map"></i>Apple Maps</a>
+  <a class="google" id="googleLink" href="#"><i data-lucide="map-pin"></i>Google Maps</a>
+  <button class="cancel" type="button" id="sheetCancel">Cancel</button>
+</div>
 <button class="totop" id="totop" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
 <div class="toast" id="toast" role="status"></div>
 
@@ -527,6 +548,22 @@ try{history.scrollRestoration='manual';}catch(_){}
 addEventListener('hashchange',()=>go(location.hash.slice(1)||'home'));
 go(location.hash.slice(1)||'home');
 addEventListener('load',()=>go(location.hash.slice(1)||'home'));
+
+// Maps chooser: Apple Maps or Google Maps
+const sheet=document.getElementById('mapSheet'),sheetBg=document.getElementById('sheetBg');
+function closeSheet(){sheet.classList.remove('show');sheetBg.classList.remove('show');}
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a[href*="google.com/maps"]'); if(!a||a.id==='googleLink')return;
+  e.preventDefault();
+  let q='';try{q=new URL(a.href).searchParams.get('query')||'';}catch(_){}
+  document.getElementById('mapPlace').textContent=q;
+  document.getElementById('appleLink').href='https://maps.apple.com/?q='+encodeURIComponent(q);
+  document.getElementById('googleLink').href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q);
+  sheet.classList.add('show');sheetBg.classList.add('show');
+},true);
+sheetBg.addEventListener('click',closeSheet);
+document.getElementById('sheetCancel').addEventListener('click',closeSheet);
+sheet.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setTimeout(closeSheet,300)));
 
 // Back to top
 const tt=document.getElementById('totop');
