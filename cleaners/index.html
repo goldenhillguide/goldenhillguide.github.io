@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Golden Hill Cleaner's Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f5efe6;--tan:#b2957a;--tan-d:#8f7359;--ink:#3d3a36;--muted:#7a736b;--line:#e6dccd;--ok:#5f7d5a;
+--serif:"Cormorant Garamond",Georgia,serif;--script:"Allura",cursive;--sans:"Montserrat",system-ui,sans-serif}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#fff;color:var(--ink);font:400 15.5px/1.6 var(--sans);padding-bottom:calc(30px + env(safe-area-inset-bottom))}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+.top{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
+.bar{height:58px;display:flex;align-items:center;justify-content:space-between;max-width:720px;margin:0 auto;padding:0 20px}
+.brand{font:600 20px/1 var(--serif);letter-spacing:.06em;text-transform:uppercase;color:var(--ink);text-decoration:none}
+.brand span{font:400 25px/1 var(--script);text-transform:none;letter-spacing:0;color:var(--tan);margin-left:4px}
+.prog{font:600 12px/1 var(--sans);color:var(--tan-d)}
+.pbar{height:4px;background:var(--cream)}
+.pbar i{display:block;height:100%;width:0;background:var(--tan);transition:width .25s}
+.intro{padding:30px 0 6px}
+.eyebrow{font:600 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--tan)}
+h1{margin:8px 0 6px;font:500 40px/1.05 var(--serif)}
+.lead{color:var(--muted);margin:0 0 18px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0 0 18px}
+.fact{background:var(--cream);border-radius:14px;padding:12px 10px;text-align:center}
+.fact b{display:block;font:600 22px/1.1 var(--serif)}
+.fact span{font:600 9.5px/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{display:flex;align-items:center;gap:10px;min-height:56px;padding:10px 14px;background:var(--cream);border-radius:16px;text-decoration:none;color:var(--ink);font:600 13.5px/1.2 var(--sans)}
+.tile svg{width:20px;height:20px;color:var(--tan-d);flex:none}
+.tile small{margin-left:auto;white-space:nowrap;font:600 11px/1 var(--sans);color:var(--tan-d)}
+section{scroll-margin-top:74px;padding:34px 0 4px}
+.sh{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin:0 0 10px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.sh h2{margin:0;font:500 28px/1.1 var(--serif)}
+.sh .count{font:600 12px/1 var(--sans);color:var(--tan-d);white-space:nowrap}
+.note{background:var(--cream);border-radius:14px;padding:12px 14px;margin:0 0 10px;font-size:14px}
+.note b{font-weight:600}
+ul.cl{list-style:none;margin:0;padding:0}
+ul.cl li{border-bottom:1px solid var(--line)}
+ul.cl label{display:grid;grid-template-columns:28px 1fr;gap:12px;padding:12px 2px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+ul.cl input{appearance:none;-webkit-appearance:none;width:24px;height:24px;border:2px solid var(--tan);border-radius:7px;margin:1px 0 0;display:grid;place-items:center;cursor:pointer}
+ul.cl input:checked{background:var(--tan)}
+ul.cl input:checked::after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg) translate(-1px,-1px)}
+ul.cl input:checked + span{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line)}
+.sub{font:600 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--tan);margin:18px 0 2px}
+.todo{color:#b0603a;font-weight:600}
+table.loc{width:100%;border-collapse:collapse;font-size:14px}
+table.loc td{padding:11px 4px;border-bottom:1px solid var(--line);vertical-align:top}
+table.loc td:first-child{font-weight:600;width:44%}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 20px;border-radius:999px;border:0;background:var(--tan);color:#fff;font:600 13px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;cursor:pointer}
+.btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.foot{text-align:center;padding:40px 20px;background:var(--cream);margin-top:40px;color:var(--muted);font-size:13px}
+.foot .s{font:400 40px/1 var(--script);color:var(--tan)}
+@media print{
+  .top,.btns,.tiles,.noprint{display:none!important}
+  body{font-size:11pt}
+  section{padding:14px 0 0;break-inside:auto}
+  ul.cl li{break-inside:avoid}
+  ul.cl input{width:14px;height:14px;border-width:1.5px;border-radius:3px}
+  ul.cl label{grid-template-columns:20px 1fr;padding:5px 0}
+  .foot{display:none}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="bar"><a class="brand" href="#top">Golden Hill<span>Cleaning</span></a><span class="prog" id="prog">0%</span></div>
+  <div class="pbar"><i id="pfill"></i></div>
+</header>
+
+<main class="wrap" id="top">
+  <div class="intro">
+    <div class="eyebrow">1045 32nd St, Unit 2 · Turnover standard</div>
+    <h1>Cleaner's Guide</h1>
+    <p class="lead">Every turnover, every time. Work top to bottom, check items off as you go, and send photos to Justin when you're done.</p>
+    <div class="facts">
+      <div class="fact"><b>11 AM</b><span>Guest checkout</span></div>
+      <div class="fact"><b>4 PM</b><span>Next check-in</span></div>
+      <div class="fact"><b>3 / 3.5</b><span>Beds / Baths</span></div>
+    </div>
+    <div class="tiles" id="tiles"></div>
+  </div>
+  <div id="sections"></div>
+
+  <div class="btns noprint">
+    <button class="btn" id="resetBtn" type="button">Start a new turnover</button>
+    <button class="btn ghost" id="printBtn" type="button">Print checklist</button>
+  </div>
+</main>
+
+<footer class="foot"><div class="s">Thank you</div>Questions? Message Justin anytime.</footer>
+
+<script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+<script>
+// ===== EDIT CONTENT HERE =====
+// "[ADD]" marks details Justin still needs to fill in.
+const GUIDE=[
+ {id:'arrive',title:'1. Arrive & Assess',icon:'door-open',note:'Arrive after 11 AM checkout. Enter with the door code from Justin. Before cleaning, walk every room and photograph any damage, stains, or missing items.',items:[
+  'Walk all three floors and the garage before touching anything',
+  'Photograph any damage, stains, or missing items and send to Justin right away',
+  'Check for forgotten guest belongings (photograph and set aside)',
+  'If guests had pets: look for pet hair, accidents, or damage and photograph it',
+  'Open windows to air out the house if needed',
+  'Start the first load of laundry (towels from the bathtubs)']},
+ {id:'kitchen',title:'2. Kitchen & Dining',icon:'chef-hat',items:[
+  'Empty, run, and unload the dishwasher; put all dishes away',
+  'Wipe counters, island, backsplash, and sink',
+  'Clean the GE 6-burner stove top and knobs; check the oven',
+  'Clean the microwave inside and out',
+  'Empty the fridge and freezer of guest food; wipe shelves and spills',
+  'Wipe fridge and appliance fronts, cabinet fronts, and handles',
+  'Reset the coffee maker: empty, rinse, and restock',
+  'Wipe the dining table and chairs',
+  'Restock salt and pepper, dish soap, and paper towels',
+  'Check the fire extinguisher and first aid kit are under the kitchen sink']},
+ {id:'living',title:'3. Living Room',icon:'sofa',items:[
+  'Dust surfaces, shelves, and the built-in bookcase',
+  'Wipe the coffee table and side tables',
+  'Fluff and straighten sofa cushions and throw pillows',
+  'Check the fireplace and TV remotes work and set them out',
+  'Turn off the electric fireplace and the 85" Frame TV',
+  'Clean the patio slider glass and tidy the private patio and outdoor furniture']},
+ {id:'bedrooms',title:'4. Bedrooms',icon:'bed-double',note:'Strip and remake every bed that was used, with fresh linens. [ADD: where clean linens are stored]',items:[
+  'Primary suite: strip and remake the king bed and the single bed',
+  'Bedroom two: strip and remake the queen bed',
+  'Bedroom three: strip and remake the queen bed; place the green throw across the foot of the bed',
+  'Check under beds and in closets and drawers for left items',
+  'Dust nightstands, dressers, lamps, and ceiling fans',
+  'Make sure room-darkening shades work and are left open',
+  'Turn off the primary suite electric fireplace',
+  'Empty bedroom trash cans']},
+ {id:'baths',title:'5. Bathrooms (3.5)',icon:'bath',items:[
+  'Collect used towels from the bathtubs',
+  'Clean and disinfect toilets, including the heated Japanese bidet seats',
+  'Scrub showers, tubs, and glass doors',
+  'Clean sinks, counters, and mirrors',
+  'Restock toilet paper, shampoo, conditioner, body soap, and hand soap',
+  'Hang fresh towels [ADD: how many per bathroom and how to fold]',
+  'Wipe the powder room vanity and mirror',
+  'Empty bathroom trash cans and replace liners',
+  'Mop bathroom floors']},
+ {id:'laundry',title:'6. Laundry',icon:'shirt',note:'Stacked washer and dryer on the third floor.',items:[
+  'Wash all used sheets and towels [ADD: detergent and settings]',
+  'Dry, fold, and store clean linens [ADD: where]',
+  'Clean the dryer lint trap',
+  'Leave the washer door open to air out',
+  'Check the second fire extinguisher is in the cabinet next to the laundry']},
+ {id:'floors',title:'7. Floors & Stairs',icon:'brush',note:'Vacuum and Swiffer are in the second floor closet near the stairs going down.',items:[
+  'Vacuum all carpets and rugs, including the stairs',
+  'Swiffer or mop all hard floors',
+  'Vacuum under and behind furniture where reachable',
+  'Return the vacuum and Swiffer to the second floor closet']},
+ {id:'baby',title:'8. Baby Gear',icon:'baby',note:'Stored in the pantry next to the kitchen.',items:[
+  'If used: wipe down the booster high chair',
+  'If used: wipe down and fold the play pen',
+  'If used: take down the 2 baby gates',
+  'Return all baby gear to the pantry']},
+ {id:'trash',title:'9. Trash & Recycling',icon:'trash-2',note:'Pickup is Thursday morning. Bins go out Wednesday night: exit the garage, turn right, and leave both bins at the curb.',items:[
+  'Empty every trash can in the house and replace liners',
+  'Take trash and recycling to the bins in the garage',
+  'Break down boxes so they fit the blue recycling bin',
+  'If cleaning on a Wednesday night or Thursday: handle bins per the schedule']},
+ {id:'reset',title:'10. Final Reset',icon:'sparkles',items:[
+  'Restock the coffee bar [ADD: what to stock]',
+  'Place the WiFi / guest guide sign in its spot',
+  'Set the thermostat to [ADD: temperature] and turn off the A/C or heat',
+  'Turn off all lights, fans, fireplaces, and the TV',
+  'Close and lock all windows',
+  'Make sure the garage door is closed',
+  'Do a final walkthrough of every room',
+  'Lock the front door by pressing the check mark on the keypad']},
+ {id:'report',title:'11. Report to Justin',icon:'camera',note:'Send everything in one message when you finish. [ADD: text, Airbnb, or another app]',items:[
+  'Photos of every room after cleaning',
+  'Photos of any damage, stains, or broken items',
+  'List of anything running low or out',
+  'Any left-behind guest items',
+  'Time you finished']}
+];
+const LOCATIONS=[
+ ['Vacuum & Swiffer','Second floor closet near the stairs going down'],
+ ['Baby gear','Pantry next to the kitchen (booster high chair, 2 baby gates, play pen)'],
+ ['Fire extinguisher #1 & first aid kit','Under the kitchen sink'],
+ ['Fire extinguisher #2','Third floor cabinet next to the laundry'],
+ ['Washer & dryer','Third floor'],
+ ['Trash & recycling bins','Garage'],
+ ['Breakers','Garage'],
+ ['Clean linens & towels','[ADD]'],
+ ['Cleaning supplies','[ADD]'],
+ ['Restock supplies (TP, soap, coffee)','[ADD]']
+];
+// ===== END CONTENT =====
+
+const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\[ADD[^\]]*\]/g,m=>'<span class="todo">'+m+'</span>');
+let store={};try{store=JSON.parse(localStorage.getItem('gh-clean')||'{}')}catch(e){}
+const save=()=>{try{localStorage.setItem('gh-clean',JSON.stringify(store))}catch(e){}};
+const secs=document.getElementById('sections');
+GUIDE.forEach(s=>{
+  const el=document.createElement('section');el.id=s.id;
+  el.innerHTML='<div class="sh"><h2>'+esc(s.title)+'</h2><span class="count" data-c="'+s.id+'"></span></div>'+
+   (s.note?'<div class="note">'+esc(s.note)+'</div>':'')+
+   '<ul class="cl">'+s.items.map((t,i)=>{const k=s.id+'-'+i;return '<li><label><input type="checkbox" data-k="'+k+'"'+(store[k]?' checked':'')+'><span>'+esc(t)+'</span></label></li>'}).join('')+'</ul>';
+  secs.appendChild(el);
+});
+const loc=document.createElement('section');loc.id='where';
+loc.innerHTML='<div class="sh"><h2>Where Things Are</h2></div><table class="loc">'+LOCATIONS.map(r=>'<tr><td>'+esc(r[0])+'</td><td>'+esc(r[1])+'</td></tr>').join('')+'</table>';
+secs.appendChild(loc);
+document.getElementById('tiles').innerHTML=GUIDE.map(s=>'<a class="tile" href="#'+s.id+'"><i data-lucide="'+s.icon+'"></i><span>'+esc(s.title.replace(/^\d+\.\s*/,''))+'</span><small data-t="'+s.id+'"></small></a>').join('')+'<a class="tile" href="#where"><i data-lucide="map-pin"></i><span>Where Things Are</span></a>';
+function update(){
+  let all=0,done=0;
+  GUIDE.forEach(s=>{const n=s.items.length,d=s.items.filter((_,i)=>store[s.id+'-'+i]).length;all+=n;done+=d;
+    const t=d+' / '+n;document.querySelector('[data-c="'+s.id+'"]').textContent=t;document.querySelector('[data-t="'+s.id+'"]').textContent=d===n?'✓':t;});
+  const p=Math.round(done/all*100);document.getElementById('prog').textContent=p+'% done';document.getElementById('pfill').style.width=p+'%';
+}
+document.addEventListener('change',e=>{const k=e.target.dataset&&e.target.dataset.k;if(!k)return;store[k]=e.target.checked;save();update();});
+document.getElementById('resetBtn').addEventListener('click',()=>{store={};save();document.querySelectorAll('ul.cl input').forEach(i=>i.checked=false);update();scrollTo(0,0);});
+document.getElementById('printBtn').addEventListener('click',()=>{try{window.print()}catch(e){}});
+document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;const t=document.getElementById(a.getAttribute('href').slice(1));if(!t)return;e.preventDefault();scrollTo({top:t.getBoundingClientRect().top+scrollY-70,behavior:'auto'});});
+try{lucide.createIcons()}catch(e){}
+update();
+</script>
+</body>
+</html>
