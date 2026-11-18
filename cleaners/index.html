@@ -57,6 +57,20 @@ table.loc td:first-child{font-weight:600;width:44%}
 .btns{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
 .foot{text-align:center;padding:40px 20px;background:var(--cream);margin-top:40px;color:var(--muted);font-size:13px}
 .foot .s{font:400 40px/1 var(--script);color:var(--tan)}
+.room{border:1px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px}
+.room h3{margin:0;font:500 24px/1.1 var(--serif);display:flex;align-items:center;gap:10px}
+.room h3 i{width:14px;height:14px;border-radius:50%;display:inline-block;flex:none}
+.room .rs{color:var(--muted);font-size:13px;margin:2px 0 0}
+.room ul{margin:10px 0 12px;padding-left:18px;font-size:14px}
+.gal{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0;padding:0 0 4px;scrollbar-width:none}
+.gal::-webkit-scrollbar{display:none}
+.gal figure{flex:0 0 62%;margin:0;scroll-snap-align:start}
+.gal img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:12px;display:block;background:var(--cream);cursor:zoom-in}
+.gal figcaption{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.35}
+.lb{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;padding:20px}
+.lb.show{display:flex}
+.lb img{max-width:100%;max-height:100%;border-radius:10px}
+@media print{.gal{flex-wrap:wrap;overflow:visible}.gal figure{flex:0 0 31%}.room{break-inside:avoid}}
 @media print{
   .top,.btns,.tiles,.noprint{display:none!important}
   body{font-size:11pt}
@@ -117,7 +131,7 @@ const GUIDE=[
   'Wipe fridge and appliance fronts, cabinet fronts, and handles',
   'Reset the coffee maker: empty, rinse, and restock',
   'Wipe the dining table and chairs',
-  'Restock salt and pepper, dish soap, and paper towels',
+  'Restock salt and pepper, dish soap, and paper towels (spares under the kitchen sink); load a fresh roll on the holder',
   'Check the fire extinguisher and first aid kit are under the kitchen sink']},
  {id:'living',title:'3. Living Room',icon:'sofa',items:[
   'Dust surfaces, shelves, and the built-in bookcase',
@@ -126,10 +140,11 @@ const GUIDE=[
   'Check the fireplace and TV remotes work and set them out',
   'Turn off the electric fireplace and the 85" Frame TV',
   'Clean the patio slider glass and tidy the private patio and outdoor furniture']},
- {id:'bedrooms',title:'4. Bedrooms',icon:'bed-double',note:'Strip and remake every bed that was used, with fresh linens. [ADD: where clean linens are stored]',items:[
-  'Primary suite: strip and remake the king bed and the single bed',
-  'Bedroom two: strip and remake the queen bed',
-  'Bedroom three: strip and remake the queen bed; place the green throw across the foot of the bed',
+ {id:'bedrooms',title:'4. Bedrooms',icon:'bed-double',note:'Strip and remake every bed that was used, with fresh linens in that room\'s colors. Check the Room Setups photos for how each bed should look. [ADD: where clean sheets are stored]',items:[
+  'Primary suite: remake the king with BLUE sheets, BLUE pillowcases, and the blue-and-white comforter (see Room Setups)',
+  'Primary suite: remake the single bed',
+  'Bedroom two: remake the queen with BEIGE sheets, beige pillowcases plus the orange, black and white patterned shams, and the patterned duvet',
+  'Bedroom three: remake the queen with BEIGE sheets, beige and white pillowcases, white bedding, and the green throw across the foot',
   'Check under beds and in closets and drawers for left items',
   'Dust nightstands, dressers, lamps, and ceiling fans',
   'Make sure room-darkening shades work and are left open',
@@ -141,7 +156,12 @@ const GUIDE=[
   'Scrub showers, tubs, and glass doors',
   'Clean sinks, counters, and mirrors',
   'Restock toilet paper, shampoo, conditioner, body soap, and hand soap',
-  'Hang fresh towels [ADD: how many per bathroom and how to fold]',
+  'Match towels to each room: primary BLUE, bedroom two GRAY, bedroom three BEIGE',
+  'Hang a hand towel on the bar and set 3 rolled washcloths on the vanity',
+  'Stock spare towels and 3 toilet paper rolls under each bathroom sink',
+  'Toilet paper: fold the end into a point, and stack 3 spare rolls on the toilet tank',
+  'Powder room: hang a fresh blue hand towel on the ring',
+  'Hang the bath mat over the edge of the tub',
   'Wipe the powder room vanity and mirror',
   'Empty bathroom trash cans and replace liners',
   'Mop bathroom floors']},
@@ -190,9 +210,17 @@ const LOCATIONS=[
  ['Washer & dryer','Third floor'],
  ['Trash & recycling bins','Garage'],
  ['Breakers','Garage'],
- ['Clean linens & towels','[ADD]'],
- ['Cleaning supplies','[ADD]'],
+ ['Spare towels & toilet paper','Under each bathroom sink'],
+ ['Clean sheets','[ADD]'],
+ ['Cleaning supplies, dish soap, paper towels','Under the kitchen sink'],
+ ['Iron & ironing board','Walk-in closet'],
  ['Restock supplies (TP, soap, coffee)','[ADD]']
+];
+const ROOMS=[
+ {id:'r-primary',name:'Primary Suite',color:'#7d9cc4',linens:['Sheets: blue','Pillowcases: blue','Comforter: blue and white','Towels: blue'],photos:[['primary-sheet','Fitted sheet: blue'],['primary-made','Finished bed'],['primary-bath-stock','Under sink: blue towels + 3 TP rolls']]},
+ {id:'r-bed2',name:'Bedroom Two',sub:'Across from the primary suite',color:'#b9a58c',linens:['Sheets: beige','Pillowcases: beige + orange, black and white patterned shams','Duvet: patterned','Towels: gray'],photos:[['bed2-sheet','Fitted sheet: beige'],['bed2-made','Finished bed'],['bed2-vanity','Vanity: gray hand towel + 3 rolled washcloths'],['bed2-tub','Tub: bath mat over the edge']]},
+ {id:'r-bed3',name:'Bedroom Three',color:'#5f7d5a',linens:['Sheets: beige','Pillowcases: beige and white','Bedding: white with green throw','Towels & hand towels: beige'],photos:[['bed3-sheet','Fitted sheet'],['bed3-made','Finished bed with green throw'],['bed3-bath-stock','Under sink: beige towels + 3 TP rolls']]},
+ {id:'r-details',name:'Bathroom & Kitchen Details',color:'#b2957a',linens:['Powder room: blue hand towel on the ring','Toilet paper folded to a point','3 spare rolls stacked on the tank'],photos:[['powder','Powder room'],['tp-fold','TP point fold'],['tp-stack','3 rolls on the tank'],['kitchen-sink','Under kitchen sink'],['paper-towel','Fresh paper towel roll'],['closet-iron','Iron & ironing board']]}
 ];
 // ===== END CONTENT =====
 
@@ -207,10 +235,15 @@ GUIDE.forEach(s=>{
    '<ul class="cl">'+s.items.map((t,i)=>{const k=s.id+'-'+i;return '<li><label><input type="checkbox" data-k="'+k+'"'+(store[k]?' checked':'')+'><span>'+esc(t)+'</span></label></li>'}).join('')+'</ul>';
   secs.appendChild(el);
 });
+const rs=document.createElement('section');rs.id='rooms';
+rs.innerHTML='<div class="sh"><h2>Room Setups</h2></div><div class="note">What a finished room looks like. Swipe through the photos and match them every turnover. Tap a photo to enlarge.</div>'+ROOMS.map(r=>'<div class="room" id="'+r.id+'"><h3><i style="background:'+r.color+'"></i>'+r.name+'</h3>'+(r.sub?'<div class="rs">'+r.sub+'</div>':'')+'<ul>'+r.linens.map(l=>'<li>'+esc(l)+'</li>').join('')+'</ul><div class="gal">'+r.photos.map(p=>'<figure><img src="img/'+p[0]+'.jpg" alt="'+p[1]+'" loading="lazy"><figcaption>'+esc(p[1])+'</figcaption></figure>').join('')+'</div></div>').join('');
+secs.insertBefore(rs,document.getElementById('arrive'));
+const lb=document.createElement('div');lb.className='lb';lb.innerHTML='<img alt="">';document.body.appendChild(lb);
+document.addEventListener('click',e=>{const im=e.target.closest('.gal img');if(im){lb.firstChild.src=im.src;lb.classList.add('show');}else if(e.target.closest('.lb'))lb.classList.remove('show');});
 const loc=document.createElement('section');loc.id='where';
 loc.innerHTML='<div class="sh"><h2>Where Things Are</h2></div><table class="loc">'+LOCATIONS.map(r=>'<tr><td>'+esc(r[0])+'</td><td>'+esc(r[1])+'</td></tr>').join('')+'</table>';
 secs.appendChild(loc);
-document.getElementById('tiles').innerHTML=GUIDE.map(s=>'<a class="tile" href="#'+s.id+'"><i data-lucide="'+s.icon+'"></i><span>'+esc(s.title.replace(/^\d+\.\s*/,''))+'</span><small data-t="'+s.id+'"></small></a>').join('')+'<a class="tile" href="#where"><i data-lucide="map-pin"></i><span>Where Things Are</span></a>';
+document.getElementById('tiles').innerHTML=GUIDE.map(s=>'<a class="tile" href="#'+s.id+'"><i data-lucide="'+s.icon+'"></i><span>'+esc(s.title.replace(/^\d+\.\s*/,''))+'</span><small data-t="'+s.id+'"></small></a>').join('')+'<a class="tile" href="#rooms"><i data-lucide="image"></i><span>Room Setups</span></a><a class="tile" href="#where"><i data-lucide="map-pin"></i><span>Where Things Are</span></a>';
 function update(){
   let all=0,done=0;
   GUIDE.forEach(s=>{const n=s.items.length,d=s.items.filter((_,i)=>store[s.id+'-'+i]).length;all+=n;done+=d;
