@@ -115,7 +115,7 @@ table.loc td:first-child{font-weight:600;width:44%}
 // ===== EDIT CONTENT HERE =====
 // "[ADD]" marks details Justin still needs to fill in.
 const GUIDE=[
- {id:'arrive',title:'1. Arrive & Assess',icon:'door-open',note:'Arrive after 11 AM checkout. Enter with the door code from Justin. Before cleaning, walk every room and photograph any damage, stains, or missing items.',items:[
+ {id:'arrive',title:'1. Arrive & Assess',icon:'door-open',note:'Arrive after 11 AM checkout. Enter with the door code from Justin. The 4 locked supply cabinets (2 in the kitchen, 2 in the primary suite) all use code 000: enter it, then press and slide down the red button to open. Before cleaning, walk every room and photograph any damage, stains, or missing items.',items:[
   'Walk all three floors and the garage before touching anything',
   'Photograph any damage, stains, or missing items and send to Justin right away',
   'Check for forgotten guest belongings (photograph and set aside)',
@@ -132,7 +132,7 @@ const GUIDE=[
   'Reset the Keurig: empty the drip tray, wipe it down, and check the water reservoir',
   'Wipe the dining table and chairs',
   'Paper towels: 1 roll on the holder + 2 spare rolls under the kitchen sink',
-  'Restock salt and pepper and dish soap',
+  'Restock salt and pepper and dish soap (refills in the locked kitchen cabinets)',
   'Check the fire extinguisher and first aid kit are under the kitchen sink']},
  {id:'living',title:'3. Living Room',icon:'sofa',items:[
   'Dust surfaces, shelves, and the built-in bookcase',
@@ -141,7 +141,7 @@ const GUIDE=[
   'Check the fireplace and TV remotes work and set them out',
   'Turn off the electric fireplace and the 85" Frame TV',
   'Clean the patio slider glass and tidy the private patio and outdoor furniture']},
- {id:'bedrooms',title:'4. Bedrooms',icon:'bed-double',note:'Strip and remake every bed that was used, with fresh linens in that room\'s colors. Check the Room Setups photos for how each bed should look. [ADD: where clean sheets are stored]',items:[
+ {id:'bedrooms',title:'4. Bedrooms',icon:'bed-double',note:'Strip and remake every bed that was used, with fresh linens in that room\'s colors. Clean sheets are in the lower locked cabinet in the primary suite: top shelf = primary (blue), middle shelf = bedroom two, bottom shelf = bedroom three (bottom floor).',items:[
   'Primary suite: remake the king with BLUE sheets, BLUE pillowcases, and the blue-and-white comforter (see Room Setups)',
   'Primary suite: remake the single bed',
   'Bedroom two: remake the queen with BEIGE sheets, beige pillowcases plus the orange, black and white patterned shams, and the patterned duvet',
@@ -167,8 +167,8 @@ const GUIDE=[
   'Empty bathroom trash cans and replace liners',
   'Mop bathroom floors']},
  {id:'laundry',title:'6. Laundry',icon:'shirt',note:'Stacked washer and dryer on the third floor.',items:[
-  'Wash all used sheets and towels [ADD: detergent and settings]',
-  'Dry, fold, and store clean linens [ADD: where]',
+  'Wash all used sheets and towels (detergent is on the top shelf of the lower locked cabinet in the primary suite) [ADD: washer settings]',
+  'Dry, fold, and return clean sheets to their room\'s shelf and towels to the upper locked cabinet in the primary suite',
   'Clean the dryer lint trap',
   'Leave the washer door open to air out',
   'Check the second fire extinguisher is in the cabinet next to the laundry']},
@@ -188,7 +188,7 @@ const GUIDE=[
   'Break down boxes so they fit the blue recycling bin',
   'If cleaning on a Tuesday night or Wednesday: put bins out Tuesday night or bring them back in after Wednesday pickup']},
  {id:'reset',title:'10. Final Reset',icon:'sparkles',items:[
-  'Coffee bar: stock 8 Keurig pods for the stay',
+  'Coffee bar: stock 8 Keurig pods for the stay (from the locked kitchen cabinets)',
   'Place the WiFi / guest guide sign in its spot',
   'Set the thermostat to [ADD: temperature] and turn off the A/C or heat',
   'Turn off all lights, fans, fireplaces, and the TV',
@@ -215,15 +215,19 @@ const LOCATIONS=[
  ['Bedroom two bath spares','Under the en suite sink: 3 TP rolls, 2 gray bath towels, 1 gray hand towel'],
  ['Bedroom three bath spares','3 TP rolls on top of the toilet; 2 beige bath towels + 1 beige hand towel under the sink'],
  ['Powder room spares','3 TP rolls on top of the toilet'],
- ['Clean sheets','[ADD]'],
- ['Cleaning supplies, dish soap, paper towels','Under the kitchen sink'],
+ ['Kitchen locked cabinets (2)','Cleaning supplies, shampoo, conditioner, body wash and hand soap refills, kitchen scrubbers, rags, Keurig pods'],
+ ['Primary suite upper locked cabinet','Towels: washcloths on top, hand towels in the middle, bath towels on the bottom (gray and beige)'],
+ ['Primary suite lower locked cabinet','Sheets by room: top shelf primary (blue) with laundry detergent, middle shelf bedroom two, bottom shelf bedroom three'],
+ ['All 4 cabinet locks','Code 000, then press and slide down the red button'],
+ ['Dish soap & paper towels','Under the kitchen sink'],
  ['Iron & ironing board','Walk-in closet'],
- ['Restock supplies (TP, soap, coffee)','[ADD]']
+ ['Restock supplies (soap refills, coffee)','Locked kitchen cabinets']
 ];
 const ROOMS=[
  {id:'r-primary',name:'Primary Suite',color:'#7d9cc4',linens:['Sheets: blue','Pillowcases: blue','Comforter: blue and white','Towels: blue','Under the RIGHT sink: 3 TP rolls, 2 blue bath towels, 1 blue hand towel'],photos:[['primary-sheet','Fitted sheet: blue'],['primary-made','Finished bed'],['primary-bath-stock','Under right sink: 3 TP, 2 bath towels, 1 hand towel']]},
  {id:'r-bed2',name:'Bedroom Two',sub:'Across from the primary suite',color:'#b9a58c',linens:['Sheets: beige','Pillowcases: beige + orange, black and white patterned shams','Duvet: patterned','Towels: gray','Under the en suite sink: 3 TP rolls, 2 gray bath towels, 1 gray hand towel'],photos:[['bed2-sheet','Fitted sheet: beige'],['bed2-made','Finished bed'],['bed2-vanity','Vanity: gray hand towel + 3 rolled washcloths'],['bed2-tub','Tub: bath mat over the edge']]},
  {id:'r-bed3',name:'Bedroom Three',color:'#5f7d5a',linens:['Sheets: beige','Pillowcases: beige and white','Bedding: white with green throw','Towels & hand towels: beige','On top of the toilet: 3 TP rolls','Under the sink: 2 beige bath towels, 1 beige hand towel'],photos:[['bed3-sheet','Fitted sheet'],['bed3-made','Finished bed with green throw'],['bed3-bath-stock','Under sink: 2 beige bath towels, 1 hand towel']]},
+ {id:'r-cabinets',name:'Locked Supply Cabinets',sub:'All 4 locks: code 000, then press and slide down the red button',color:'#3d3a36',linens:['Kitchen (2 cabinets): cleaners, shampoo, conditioner, soap refills, scrubbers, rags, Keurig pods','Primary suite upper: washcloths, hand towels, bath towels','Primary suite lower: sheets by room, plus laundry detergent'],photos:[['cab-kitchen','Kitchen: supplies, refills, Keurig pods'],['cab-towels','Primary suite upper: towels'],['cab-linens','Primary suite lower: top primary (blue) + detergent, middle bedroom two, bottom bedroom three']]},
  {id:'r-details',name:'Bathroom & Kitchen Details',color:'#b2957a',linens:['Powder room: blue hand towel on the ring','Powder room: 3 spare TP rolls on top of the toilet','Every bathroom: 1 roll on the holder, folded to a point','Kitchen: 1 paper towel roll on the holder + 2 under the sink','Coffee bar: 8 Keurig pods per stay'],photos:[['powder','Powder room'],['tp-fold','TP point fold'],['tp-stack','3 spare rolls on top of the toilet'],['kitchen-sink','Under kitchen sink: 2 spare paper towel rolls'],['paper-towel','Fresh paper towel roll'],['closet-iron','Iron & ironing board']]}
 ];
 // ===== END CONTENT =====
