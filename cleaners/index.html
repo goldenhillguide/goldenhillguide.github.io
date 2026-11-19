@@ -115,7 +115,7 @@ table.loc td:first-child{font-weight:600;width:44%}
 // ===== EDIT CONTENT HERE =====
 // "[ADD]" marks details Justin still needs to fill in.
 const GUIDE=[
- {id:'arrive',title:'1. Arrive & Assess',icon:'door-open',note:'Arrive after 11 AM checkout. Enter with the door code from Justin. The 4 locked supply cabinets (2 in the kitchen, 2 in the primary suite) all use code 000: enter it, then press and slide down the red button to open. Before cleaning, walk every room and photograph any damage, stains, or missing items.',items:[
+ {id:'arrive',title:'1. Arrive & Assess',icon:'door-open',note:'Arrive after 11 AM checkout. Enter with the door code from Justin. The 4 locked supply cabinets (2 in the kitchen, 2 in the primary suite) all use code 000: enter it, then press and slide down the red button to open. The locked closet on the bottom floor uses code 1237 then # and holds backstock toilet paper, paper towels, and touch-up paint. Before cleaning, walk every room and photograph any damage, stains, or missing items.',items:[
   'Walk all three floors and the garage before touching anything',
   'Photograph any damage, stains, or missing items and send to Justin right away',
   'Check for forgotten guest belongings (photograph and set aside)',
@@ -156,7 +156,7 @@ const GUIDE=[
   'Clean and disinfect toilets, including the heated Japanese bidet seats',
   'Scrub showers, tubs, and glass doors',
   'Clean sinks, counters, and mirrors',
-  'Restock toilet paper, shampoo, conditioner, body soap, and hand soap',
+  'Restock toilet paper, shampoo, conditioner, body soap, and hand soap (backstock TP and paper towels in the bottom floor closet, code 1237 then #)',
   'Match towels to each room: primary BLUE, bedroom two GRAY, bedroom three BEIGE',
   'Primary: drape 2 blue bath towels over the glass shower door; bedroom three: hang beige towels on the wall bar',
   'Hang a hand towel on the bar and set 3 rolled washcloths on the vanity',
@@ -220,6 +220,7 @@ const LOCATIONS=[
  ['Primary suite upper locked cabinet','Towels: washcloths on top, hand towels in the middle, bath towels on the bottom (gray and beige)'],
  ['Primary suite lower locked cabinet','Sheets by room: top shelf primary (blue) with laundry detergent, middle shelf bedroom two, bottom shelf bedroom three'],
  ['All 4 cabinet locks','Code 000, then press and slide down the red button'],
+ ['Bottom floor locked closet','Code 1237 then #. Backstock toilet paper, paper towels, touch-up paint'],
  ['Dish soap & paper towels','Under the kitchen sink'],
  ['Iron & ironing board','Walk-in closet'],
  ['Restock supplies (soap refills, coffee)','Locked kitchen cabinets']
@@ -228,7 +229,7 @@ const ROOMS=[
  {id:'r-primary',name:'Primary Suite',color:'#7d9cc4',linens:['Sheets: blue','Pillowcases: blue','Comforter: blue and white','Shower: 2 blue bath towels draped over the glass door','Vanity: blue hand towel on the bar + 3 rolled blue washcloths','Under the RIGHT sink: 3 TP rolls, 2 blue bath towels, 1 blue hand towel'],photos:[['primary-sheet','Fitted sheet: blue'],['primary-made','Finished bed'],['primary-shower','Shower: 2 bath towels over the glass door'],['primary-vanity','Vanity: hand towel + 3 rolled washcloths'],['primary-bath-stock','Under right sink: 3 TP, bath towels, hand towel']]},
  {id:'r-bed2',name:'Bedroom Two',sub:'Across from the primary suite',color:'#b9a58c',linens:['Sheets: taupe','Pillowcases: taupe + orange, black and white patterned shams','Duvet: patterned','Towels: gray','Vanity: gray hand towel on the bar + rolled gray washcloths','Tub: striped bath mat over the edge','Under the en suite sink: 3 TP rolls, 2 gray bath towels, 1 gray hand towel'],photos:[['bed2-sheet','Fitted sheet: taupe'],['bed2-made','Finished bed'],['bed2-vanity','Vanity: hand towel + rolled washcloths'],['bed2-tub','Tub: bath mat over the edge'],['bed2-bath-stock','Under sink: 3 TP, gray bath towels, hand towel']]},
  {id:'r-bed3',name:'Bedroom Three',color:'#5f7d5a',linens:['Sheets: beige','Pillowcases: beige and white','Bedding: white with green throw across the foot','Towels & hand towels: beige, hung on the wall bar','Vanity: rolled beige washcloths','Tub: brown bath mat over the edge','On top of the toilet: 3 TP rolls','Under the sink: 2 beige bath towels, 1 beige hand towel'],photos:[['bed3-sheet','Fitted sheet'],['bed3-made','Finished bed with green throw'],['bed3-bath','Bath: beige towels on the bar, mat over the tub'],['bed3-vanity','3 TP rolls on the tank + rolled washcloths']]},
- {id:'r-cabinets',name:'Locked Supply Cabinets',sub:'All 4 locks: code 000, then press and slide down the red button',color:'#3d3a36',linens:['Kitchen (2 cabinets): cleaners, shampoo, conditioner, soap refills, scrubbers, rags, Keurig pods','Primary suite upper: washcloths, hand towels, bath towels','Primary suite lower: sheets by room, plus laundry detergent'],photos:[['lock','Lock: set 000, then press and slide down the red button'],['cab-kitchen','Kitchen: supplies, refills, Keurig pods'],['cab-towels','Primary suite upper: towels'],['cab-linens','Primary suite lower: top primary (blue) + detergent, middle bedroom two, bottom bedroom three']]},
+ {id:'r-cabinets',name:'Locked Supply Cabinets',sub:'4 cabinets: code 000, then press and slide down the red button. Bottom floor closet: 1237 then #',color:'#3d3a36',linens:['Kitchen (2 cabinets): cleaners, shampoo, conditioner, soap refills, scrubbers, rags, Keurig pods','Primary suite upper: washcloths, hand towels, bath towels','Primary suite lower: sheets by room, plus laundry detergent','Bottom floor closet (code 1237 then #): backstock toilet paper, paper towels, touch-up paint'],photos:[['lock','Lock: set 000, then press and slide down the red button'],['cab-kitchen','Kitchen: supplies, refills, Keurig pods'],['cab-towels','Primary suite upper: towels'],['cab-linens','Primary suite lower: top primary (blue) + detergent, middle bedroom two, bottom bedroom three']]},
  {id:'r-details',name:'Half Bath & Kitchen',sub:'Half bath = the marble powder room',color:'#b2957a',linens:['Half bath: blue hand towel on the ring','Half bath: 3 spare TP rolls on top of the toilet','Every bathroom: 1 roll on the holder, folded to a point','Kitchen: 1 paper towel roll on the holder + 2 under the sink','Coffee bar: 8 Keurig pods per stay'],photos:[['powder','Half bath: blue hand towel on the ring'],['powder-tp','Half bath: 3 TP rolls on the tank'],['tp-fold','TP point fold'],['kitchen-sink','Under kitchen sink: 2 spare paper towel rolls'],['paper-towel','Fresh paper towel roll'],['keurig','Keurig: fill the side rack with 8 pods (4 per column)'],['closet-iron','Iron & ironing board']]}
 ];
 // ===== END CONTENT =====
