@@ -115,94 +115,35 @@ table.loc td:first-child{font-weight:600;width:44%}
 // ===== EDIT CONTENT HERE =====
 // "[ADD]" marks details Justin still needs to fill in.
 const GUIDE=[
- {id:'arrive',title:'1. Arrive & Assess',icon:'door-open',note:'Arrive after 11 AM checkout. Enter with the door code from Justin. The 4 locked supply cabinets (2 in the kitchen, 2 in the primary suite) all use code 000: enter it, then press and slide down the red button to open. The locked closet on the bottom floor uses code 1237 then # and holds backstock toilet paper, paper towels, and touch-up paint. Before cleaning, walk every room and photograph any damage, stains, or missing items.',items:[
-  'Walk all three floors and the garage before touching anything',
-  'Photograph any damage, stains, or missing items and send to Justin right away',
-  'Check for forgotten guest belongings (photograph and set aside)',
-  'If guests had pets: look for pet hair, accidents, or damage and photograph it',
-  'Open windows to air out the house if needed',
-  'Start the first load of laundry (towels from the bathtubs)']},
- {id:'kitchen',title:'2. Kitchen & Dining',icon:'chef-hat',items:[
-  'Empty, run, and unload the dishwasher; put all dishes away',
-  'Wipe counters, island, backsplash, and sink',
-  'Clean the GE 6-burner stove top and knobs; check the oven',
-  'Clean the microwave inside and out',
-  'Empty the fridge and freezer of guest food; wipe shelves and spills',
-  'Wipe fridge and appliance fronts, cabinet fronts, and handles',
-  'Reset the Keurig: empty the drip tray, wipe it down, and check the water reservoir',
-  'Wipe the dining table and chairs',
-  'Paper towels: 1 roll on the holder + 2 spare rolls under the kitchen sink',
-  'Restock salt and pepper and dish soap (refills in the locked kitchen cabinets)',
-  'Check the fire extinguisher and first aid kit are under the kitchen sink']},
- {id:'living',title:'3. Living Room',icon:'sofa',items:[
-  'Dust surfaces, shelves, and the built-in bookcase',
-  'Wipe the coffee table and side tables',
-  'Fluff and straighten sofa cushions and throw pillows',
-  'Check the fireplace and TV remotes work and set them out',
-  'Turn off the electric fireplace and the 85" Frame TV',
-  'Clean the patio slider glass and tidy the private patio and outdoor furniture']},
- {id:'bedrooms',title:'4. Bedrooms',icon:'bed-double',note:'Strip and remake every bed that was used, with fresh linens in that room\'s colors. Clean sheets are in the lower locked cabinet in the primary suite: top shelf = primary (blue), middle shelf = bedroom two, bottom shelf = bedroom three (bottom floor).',items:[
-  'Primary suite: remake the king with BLUE sheets, BLUE pillowcases, and the blue-and-white comforter (see Room Setups)',
-  'Primary suite: remake the single bed',
-  'Bedroom two: remake the queen with TAUPE sheets, taupe pillowcases plus the orange, black and white patterned shams, and the patterned duvet',
-  'Bedroom three: remake the queen with BEIGE sheets, beige and white pillowcases, white bedding, and the green throw across the foot',
-  'Check under beds and in closets and drawers for left items',
-  'Dust nightstands, dressers, lamps, and ceiling fans',
-  'Make sure room-darkening shades work and are left open',
-  'Turn off the primary suite electric fireplace',
-  'Empty bedroom trash cans']},
- {id:'baths',title:'5. Bathrooms (3.5)',icon:'bath',items:[
-  'Collect used towels from the bathtubs',
-  'Clean and disinfect toilets, including the heated Japanese bidet seats',
-  'Scrub showers, tubs, and glass doors',
-  'Clean sinks, counters, and mirrors',
-  'Restock toilet paper, shampoo, conditioner, body soap, and hand soap (backstock TP and paper towels in the bottom floor closet, code 1237 then #)',
-  'Match towels to each room: primary BLUE, bedroom two GRAY, bedroom three BEIGE',
-  'Primary: drape 2 blue bath towels over the glass shower door; bedroom three: hang beige towels on the wall bar',
-  'Hang a hand towel on the bar and set 3 rolled washcloths on the vanity',
-  'Restock spares in each bathroom exactly as listed in Room Setups and Where Things Are (3 TP rolls everywhere; 2 bath towels + 1 hand towel in each bedroom bath)',
-  'Load a roll on every toilet paper holder and fold the end to a point',
-  'Half bath (marble powder room): hang a fresh blue hand towel on the ring',
-  'Hang the bath mat over the edge of the tub',
-  'Wipe the powder room vanity and mirror',
-  'Empty bathroom trash cans and replace liners',
-  'Mop bathroom floors']},
- {id:'laundry',title:'6. Laundry',icon:'shirt',note:'Stacked washer and dryer on the third floor. Always leave the washer door cracked open when you finish to prevent mildew and mold.',items:[
-  'Wash all used sheets and towels (detergent is on the top shelf of the lower locked cabinet in the primary suite) [ADD: washer settings]',
-  'Dry, fold, and return clean sheets to their room\'s shelf and towels to the upper locked cabinet in the primary suite',
-  'Clean the dryer lint trap',
-  'When done with the washer, leave the door cracked open to prevent mildew and mold',
-  'Check the second fire extinguisher is in the cabinet next to the laundry']},
- {id:'floors',title:'7. Floors & Stairs',icon:'brush',note:'Vacuum and Swiffer are in the second floor closet near the stairs going down.',items:[
-  'Vacuum all carpets and rugs, including the stairs',
-  'Swiffer or mop all hard floors',
-  'Vacuum under and behind furniture where reachable',
-  'Return the vacuum and Swiffer to the second floor closet']},
- {id:'baby',title:'8. Baby Gear',icon:'baby',note:'Stored in the pantry next to the kitchen.',items:[
-  'If used: wipe down the booster high chair',
-  'If used: wipe down and fold the play pen',
-  'If used: take down the 2 baby gates',
-  'Return all baby gear to the pantry']},
- {id:'trash',title:'9. Trash & Recycling',icon:'trash-2',note:'Pickup is Wednesday morning. Bins go out Tuesday night: exit the garage, turn right, and leave both bins at the curb.',items:[
-  'Empty every trash can in the house and replace liners',
-  'Take trash and recycling to the bins in the garage',
-  'Break down boxes so they fit the blue recycling bin',
-  'If cleaning on a Tuesday night or Wednesday: put bins out Tuesday night or bring them back in after Wednesday pickup']},
- {id:'reset',title:'10. Final Reset',icon:'sparkles',items:[
-  'Coffee bar: load 8 Keurig pods into the rack on the side of the Keurig, 4 per column (pods are in the locked kitchen cabinets)',
-  'Place the WiFi / guest guide sign in its spot',
-  'Set the A/C to 76 before you leave',
-  'Turn off all lights, fans, fireplaces, and the TV',
-  'Close and lock all windows',
-  'Make sure the garage door is closed',
-  'Do a final walkthrough of every room',
-  'Lock the front door by pressing the check mark on the keypad']},
- {id:'report',title:'11. Report to Justin',icon:'camera',note:'Send everything in one message when you finish. [ADD: text, Airbnb, or another app]',items:[
-  'Photos of every room after cleaning',
-  'Photos of any damage, stains, or broken items',
-  'List of anything running low or out',
-  'Any left-behind guest items',
-  'Time you finished']}
+ {id:'arrive',title:'1. Arrive',icon:'door-open',note:'Start after 11 AM checkout. Supply cabinets: code 000, then slide down the red button. Bottom floor closet: 1237 then #.',items:[
+  'Walk the house. Photograph any damage, stains, or left items and text Justin',
+  'Start a load of towels']},
+ {id:'kitchen',title:'2. Kitchen & Living',icon:'chef-hat',items:[
+  'Run and empty the dishwasher; put dishes away',
+  'Clear guest food from the fridge; wipe counters, stove, microwave, and sink',
+  'Paper towels: 1 on the holder, 2 under the sink',
+  'Keurig: empty the tray and load 8 pods in the rack',
+  'Living room: dust, fluff pillows, set out the remotes']},
+ {id:'bedrooms',title:'3. Bedrooms',icon:'bed-double',note:'Clean sheets are in the lower locked cabinet in the primary suite. See Room Setups for photos.',items:[
+  'Remake used beds: primary BLUE, bedroom two TAUPE, bedroom three BEIGE',
+  'Check under beds and in drawers for left items',
+  'Dust and empty the trash']},
+ {id:'baths',title:'4. Bathrooms',icon:'bath',note:'Towels match the bedroom color. Half bath = the marble powder room.',items:[
+  'Clean toilets, showers, tubs, sinks, and mirrors',
+  'Set out fresh towels like the photos; bath mat over the tub edge',
+  'Roll on every holder (fold the end) + 3 spare rolls; refill soaps and shampoo',
+  'Restock 2 bath towels + 1 hand towel under each bedroom bath sink',
+  'Mop the floors']},
+ {id:'laundry',title:'5. Laundry & Floors',icon:'shirt',note:'Washer and dryer: third floor. Vacuum and Swiffer: second floor closet near the stairs.',items:[
+  'Wash, dry, and fold; return linens to the primary suite cabinets',
+  'Clean the lint trap and leave the washer door cracked',
+  'Vacuum carpets and stairs; Swiffer hard floors']},
+ {id:'reset',title:'6. Lock Up',icon:'sparkles',note:'Trash pickup is Wednesday morning. Bins out Tuesday night.',items:[
+  'Empty all trash into the garage bins',
+  'Put baby gear back in the pantry if it was used',
+  'Set the A/C to 76; turn off lights, TV, and fireplaces',
+  'Close windows and the garage; lock the front door (press the check mark)',
+  'Text Justin a photo of each room and anything running low']}
 ];
 const LOCATIONS=[
  ['Vacuum & Swiffer','Second floor closet near the stairs going down'],
@@ -235,8 +176,8 @@ const ROOMS=[
 // ===== END CONTENT =====
 
 const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\[ADD[^\]]*\]/g,m=>'<span class="todo">'+m+'</span>');
-let store={};try{store=JSON.parse(localStorage.getItem('gh-clean')||'{}')}catch(e){}
-const save=()=>{try{localStorage.setItem('gh-clean',JSON.stringify(store))}catch(e){}};
+let store={};try{store=JSON.parse(localStorage.getItem('gh-clean2')||'{}')}catch(e){}
+const save=()=>{try{localStorage.setItem('gh-clean2',JSON.stringify(store))}catch(e){}};
 const secs=document.getElementById('sections');
 GUIDE.forEach(s=>{
   const el=document.createElement('section');el.id=s.id;
