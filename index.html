@@ -125,7 +125,7 @@ details p{margin:0 0 16px}
 .avatar{width:96px;height:96px;border-radius:50%;background:var(--cream);object-fit:cover;flex:none;border:3px solid var(--cream)}
 .foot{text-align:center;padding:50px 20px 40px;background:var(--cream);margin-top:50px}
 .foot .script{font:400 46px/1 var(--script);color:var(--tan)}
-.totop{position:fixed;right:16px;bottom:calc(80px + env(safe-area-inset-bottom));z-index:30;width:48px;height:48px;border-radius:50%;border:0;background:var(--ink);color:#fff;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.18);opacity:0;pointer-events:none;transition:opacity .25s;cursor:pointer}
+.totop{position:fixed;left:16px;bottom:calc(80px + env(safe-area-inset-bottom));z-index:30;width:48px;height:48px;border-radius:50%;border:0;background:var(--ink);color:#fff;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.18);opacity:0;pointer-events:none;transition:opacity .25s;cursor:pointer}
 .totop.show{opacity:1;pointer-events:auto}
 .toast{position:fixed;left:50%;bottom:calc(136px + env(safe-area-inset-bottom));transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:999px;font-size:13px;opacity:0;transition:opacity .2s;z-index:70;pointer-events:none}
 .toast.show{opacity:1}
@@ -163,6 +163,28 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
 .sheet .apple{background:var(--ink);color:#fff}
 .sheet .google{background:var(--cream);color:var(--ink)}
 .sheet .cancel{background:transparent;color:var(--muted)}
+
+.chatbtn{position:fixed;right:16px;bottom:calc(80px + env(safe-area-inset-bottom));z-index:50;height:52px;padding:0 18px 0 14px;border-radius:999px;border:0;background:var(--tan);color:#fff;display:flex;align-items:center;gap:8px;font:600 13px/1 var(--sans);box-shadow:0 8px 24px rgba(0,0,0,.18);cursor:pointer}
+.chatbtn svg{width:22px;height:22px}
+.chat{position:fixed;inset:0;z-index:85;background:#fff;display:none;flex-direction:column;padding-top:env(safe-area-inset-top)}
+.chat.show{display:flex}
+@media(min-width:700px){.chat{inset:auto 20px 90px auto;width:380px;height:600px;max-height:calc(100vh - 120px);border-radius:22px;box-shadow:0 20px 60px rgba(0,0,0,.25);overflow:hidden}}
+.chathead{display:flex;align-items:center;gap:12px;padding:12px 12px 12px 18px;border-bottom:1px solid var(--line)}
+.chathead img{width:38px;height:38px;border-radius:50%;object-fit:cover}
+.chathead b{display:block;font:600 18px/1.1 var(--serif)}
+.chathead span{font-size:12px;color:var(--muted)}
+.chathead button{margin-left:auto;width:44px;height:44px;border:0;background:transparent;border-radius:12px;display:grid;place-items:center;color:var(--ink);cursor:pointer}
+.msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;-webkit-overflow-scrolling:touch}
+.msg{max-width:86%;padding:11px 14px;border-radius:18px;font-size:14.5px;line-height:1.5}
+.msg.bot{background:var(--cream);border-bottom-left-radius:6px;align-self:flex-start}
+.msg.me{background:var(--ink);color:#fff;border-bottom-right-radius:6px;align-self:flex-end}
+.msg.bot a.go{display:inline-flex;align-items:center;gap:4px;margin-top:8px;font:600 12.5px/1 var(--sans);color:var(--tan-d);text-decoration:none}
+.sugg{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 10px}
+.sugg button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 12px;font:500 12.5px/1 var(--sans);color:var(--ink);cursor:pointer}
+.chatform{display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));border-top:1px solid var(--line)}
+.chatform input{flex:1;min-height:46px;border:1px solid var(--line);border-radius:999px;padding:0 16px;font:400 16px var(--sans);color:var(--ink);outline:none}
+.chatform input:focus{border-color:var(--tan)}
+.chatform button{width:46px;height:46px;border-radius:50%;border:0;background:var(--tan);color:#fff;display:grid;place-items:center;cursor:pointer}
 @media (min-width:700px){
   .grid{grid-template-columns:repeat(4,1fr)}
   .hero h1{font-size:84px}
@@ -477,6 +499,13 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
   <a class="google" id="googleLink" href="#"><i data-lucide="map-pin"></i>Google Maps</a>
   <button class="cancel" type="button" id="sheetCancel">Cancel</button>
 </div>
+<button class="chatbtn" id="chatOpen" aria-label="Ask a question"><i data-lucide="message-circle-question"></i>Ask</button>
+<div class="chat" id="chat" role="dialog" aria-label="House assistant">
+  <div class="chathead"><img src="img/host.jpg" alt=""><div><b>House Assistant</b><span>Answers from this guide</span></div><button id="chatClose" aria-label="Close"><i data-lucide="x"></i></button></div>
+  <div class="msgs" id="msgs"></div>
+  <div class="sugg" id="sugg"></div>
+  <form class="chatform" id="chatForm"><input id="chatIn" type="text" placeholder="Ask about the house…" autocomplete="off" enterkeyhint="send"><button aria-label="Send"><i data-lucide="send"></i></button></form>
+</div>
 <button class="totop" id="totop" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
 <div class="toast" id="toast" role="status"></div>
 
@@ -573,6 +602,83 @@ document.addEventListener('click',e=>{
 sheetBg.addEventListener('click',closeSheet);
 document.getElementById('sheetCancel').addEventListener('click',closeSheet);
 sheet.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setTimeout(closeSheet,300)));
+
+// House assistant: answers only from this guide's content
+const KB=[
+ {k:'trash garbage bin bins recycling recycle pickup collection garbage day',a:'Trash and recycling pickup is Wednesday morning. Both bins are in the garage. Please roll them to the curb Tuesday night (exit the garage and turn right), then bring them back in after pickup on Wednesday.',s:'trash'},
+ {k:'wifi wi-fi internet password network connect',a:'WiFi network: <b>GoldenHill</b><br>Password: <b>Welcome2SD</b>',s:'wifi'},
+ {k:'check in checkin arrive arrival door code keypad get in early',a:'Check-in is anytime after 4 PM. It\'s self check-in with a keypad on the front door, and your door code is sent through the Airbnb app before you arrive. Message Justin if you\'re running late or need help getting in.',s:'checkin'},
+ {k:'check out checkout leave leaving departure time late',a:'Checkout is by 11 AM. Before you go: load and start the dishwasher, turn off lights, fireplaces, TV and A/C, leave used towels in the bathtub, bag trash for the garage bins, check for belongings, close windows, and press the check mark on the keypad to lock up.',s:'checkout'},
+ {k:'lock locking front door keypad',a:'To lock the front door, press the check mark on the keypad.',s:'checkin'},
+ {k:'park parking garage car cars street ev charger charging tesla electric',a:'You have a private 2-car garage with a 240v EV charger hookup (bring your own cable). Free street parking is nearby for a third car. Please don\'t block the shared driveway or neighbors\' garages, and check signs for street sweeping.',s:'directions'},
+ {k:'address where located location directions airport drive',a:'1045 32nd St, Unit 2, San Diego, CA 92102, in Golden Hill across from the 32nd St Canyon trailhead. About 15 minutes from the airport, 7 from Petco Park and the Gaslamp, and 10 from Balboa Park and the Zoo.',s:'directions'},
+ {k:'pet pets dog dogs cat cats animal fee',a:'Pets are welcome for a $150 fee per pet, per stay. Please include every pet in your booking, keep them off beds and furniture, pick up after them, don\'t leave them alone for long periods, and keep barking down during quiet hours. Pet damage will be charged.',s:'pets'},
+ {k:'quiet hours noise loud music',a:'Quiet hours are 10 PM to 7 AM. We share walls with neighbors on both sides.',s:'rules'},
+ {k:'smoke smoking vape vaping cigarette weed',a:'No smoking or vaping anywhere on the property, inside or out, including e-cigarettes.',s:'rules'},
+ {k:'party parties event events guests visitors people max maximum',a:'Parties and events aren\'t allowed. Up to 7 overnight guests, and only the guests on your booking.',s:'rules'},
+ {k:'rules house rules',a:'House rules: no smoking or vaping, quiet hours 10 PM to 7 AM, no parties or events (up to 7 guests on your booking), pets welcome for $150 per pet per stay, and please run the dishwasher and lock up at checkout.',s:'rules'},
+ {k:'baby gear crib high chair highchair booster gate gates play pen playpen pack kids infant toddler',a:'All the baby gear is in the pantry next to the kitchen: a booster high chair, 2 baby gates, and a play pen. Please return everything to the pantry before checkout.',s:'baby'},
+ {k:'towel towels blanket blankets pillow pillows extra linens sheets supplies',a:'Extra blankets and towels are in the closets. Fresh linens, extra pillows and hangers are in the bedrooms.',s:'know'},
+ {k:'vacuum swiffer mop broom clean cleaning spill mess',a:'The vacuum and Swiffer are in the second floor closet near the stairs going down. You\'re never required to clean, but if you want to tidy up a spill, it\'s appreciated.',s:'know'},
+ {k:'shoes shoe barefoot',a:'We love a shoes-off house. If you\'re comfortable with it, leaving shoes by the front door helps keep the floors fresh.',s:'know'},
+ {k:'fire extinguisher extinguishers fire',a:'There are two fire extinguishers: one under the kitchen sink, and one on the third floor in the cabinet next to the laundry. Call 911 for any fire.',s:'emergency'},
+ {k:'first aid kit bandage bandaids hurt injury cut',a:'The first aid kit is under the kitchen sink. For any emergency, call 911 first, then message Justin.',s:'emergency'},
+ {k:'emergency hospital er doctor police 911 urgent',a:'For any emergency, call 911. Nearest hospital: Scripps Mercy, 4077 Fifth Ave (619-294-8111). Police: SDPD Central, 2501 Imperial Ave (619-744-9500).',s:'emergency'},
+ {k:'thermostat ac a/c air conditioning heat heating temperature warm cool fan fans',a:'Central A/C and heat are set from the thermostat, and the bedrooms have ceiling fans and room-darkening shades. Please turn the A/C off when you head out for the day.',s:'know'},
+ {k:'fireplace fireplaces tv television netflix streaming remote',a:'The living room and primary suite each have an electric fireplace that runs on a remote. The 85" Samsung Frame TV is ready for your streaming apps.',s:'know'},
+ {k:'pool hot tub jacuzzi spa gym sauna',a:'The guide doesn\'t list a pool, hot tub or gym at the house. For anything else, message Justin in the Airbnb app.',s:'amenities'},
+ {k:'laundry washer dryer washing machine iron hair dryer hairdryer',a:'There\'s an in-unit washer and dryer, plus an iron and hair dryer.',s:'amenities'},
+ {k:'kitchen cook cooking stove oven dishwasher microwave pots pans dishes',a:'The kitchen has a GE 6-burner gas range, oven, microwave, dishwasher, pots and pans, baking sheet, dishes, wine glasses and salt and pepper. Please load the dishwasher as you go and run it before checkout.',s:'kitchen'},
+ {k:'coffee maker coffee bar keurig',a:'There\'s a coffee maker and a coffee bar in the house. For a coffee shop, Dark Horse Coffee on 25th St is a neighborhood favorite.',s:'kitchen'},
+ {k:'bedroom bedrooms bed beds king queen sleep',a:'Primary suite: king bed plus a single bed, electric fireplace, walk-in closet and private bath. Bedroom two: queen bed with its own bath. Bedroom three: queen bed with an ensuite full bath.',s:'bedrooms'},
+ {k:'power outage electricity breaker breakers lights out',a:'Check the SDG&E outage map at sdge.com to see if the area is affected, then message Justin. The breakers are in the garage.',s:'faq'},
+ {k:'broken broke repair fix not working damage problem issue',a:'Message Justin in the Airbnb app right away and he\'ll help.',s:'faq'},
+ {k:'extend extension stay longer extra night',a:'Send a change request in the Airbnb app. If the dates are open, we\'re happy to extend your stay.',s:'faq'},
+ {k:'contact host justin message call phone reach',a:'Message Justin anytime in the Airbnb app.',s:'host'},
+ {k:'restaurant restaurants dinner food eat lunch pizza italian',a:'Favorites nearby: Juan Jasper (1216 28th St), Buona Forchetta for pizza (3001 Beech St), Harland (2953 Beech St) and Piacere Mio for Italian (1947 Fern St).',s:'restaurants'},
+ {k:'bar bars drink drinks wine beer cocktail cocktails',a:'For drinks: Fernside (1946 Fern St), Counterpoint (830 25th St), Bock (1521 30th St) and The Rose Wine Bar (2219 30th St).',s:'bars'},
+ {k:'breakfast tacos burrito cafe casual cheap',a:'Casual picks: Dark Horse Coffee (811 25th St), Golden Hill Cafe for breakfast (2505 C St) and Humberto\'s Tacos (1015 25th St).',s:'eat'},
+ {k:'grocery groceries store market pharmacy cvs gas station',a:'Food Bowl Market (3035 Cedar St) for basics, CVS Pharmacy (3030 Grape St), and the 76 gas station (3010 Market St). Vons and Grocery Outlet are a short drive.',s:'nearest'},
+ {k:'things to do beach beaches hike hiking surf surfing golf snorkel',a:'Hike the 32nd St Canyon trail across the street, hit Coronado, Mission or Pacific Beach (15 to 20 min), surf or snorkel at La Jolla Cove, or golf at Balboa Park.',s:'do'},
+ {k:'see sights zoo balboa park gaslamp petco la jolla cabrillo',a:'Balboa Park and the San Diego Zoo (7 min), the Gaslamp and Petco Park (7 min), Cabrillo Monument for sunset views, and La Jolla Cove (20 min).',s:'see'},
+ {k:'kids children family activities',a:'For kids: the San Diego Zoo, Balboa Park carousel and miniature railroad, the Fleet Science Center, and the USS Midway Museum.',s:'kids'},
+ {k:'uber lyft taxi rideshare bus trolley train transit scooter bike walk',a:'Uber and Lyft are easiest (about 15 min to the airport). Lime scooters and bikes are all over Golden Hill, the MTS Trolley Orange Line runs along Commercial St, and buses run on Broadway, 25th and 30th St.',s:'around'}
+];
+const STOP=new Set('a an the is are was were be to of in on at for and or with my me i we our you your it its do does did how what where when which who can could should would there here this that please any some get have has'.split(' '));
+const tok=s=>s.toLowerCase().replace(/[^a-z0-9\s\/-]/g,' ').split(/\s+/).filter(w=>w&&!STOP.has(w));
+const stem=w=>w.replace(/(ing|es|s)$/,'');
+function answer(q){
+  const qt=tok(q).map(stem); if(!qt.length) return null;
+  let best=null,score=0;
+  KB.forEach(e=>{const kt=e.k.split(' ').map(stem);let s=0;qt.forEach(w=>{if(kt.includes(w))s+=2;else if(w.length>3&&kt.some(k=>k.startsWith(w)||w.startsWith(k)))s+=1;});if(s>score){score=s;best=e;}});
+  if(score>=2) return best;
+  // fallback: search the guide's own text
+  let hit=null,hs=0;
+  document.querySelectorAll('main section[id] .item, main section[id] .card, main section[id] .rules li, main section[id] details, main section[id] p').forEach(el=>{
+    const t=el.textContent.replace(/\s+/g,' ').trim(); if(t.length<20)return;
+    const tt=tok(t).map(stem);let s=0;qt.forEach(w=>{if(tt.includes(w))s++;});
+    if(s>hs){hs=s;hit={a:t.length>320?t.slice(0,317)+'…':t,s:el.closest('section').id};}
+  });
+  return hs>=1?hit:null;
+}
+const msgs=document.getElementById('msgs'),chat=document.getElementById('chat'),cin=document.getElementById('chatIn');
+function add(html,who){const d=document.createElement('div');d.className='msg '+who;d.innerHTML=html;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;}
+const label=id=>{const s=document.getElementById(id);const h=s&&s.querySelector('.sh');return h?[...h.children].map(c=>c.textContent.trim()).join(' '):'this section';};
+function ask(q){
+  add(q.replace(/</g,'&lt;'),'me');
+  const r=answer(q);
+  setTimeout(()=>{
+    if(r) add(r.a+(r.s?'<br><a class="go" href="#'+r.s+'">See '+label(r.s)+' →</a>':''),'bot');
+    else add('I couldn\'t find that in the guide. Please <a href="https://www.airbnb.com/guest/messages">message Justin in the Airbnb app</a> and he\'ll help.','bot');
+  },250);
+}
+const SUG=['Trash day?','WiFi password','Checkout time','Where to park','Baby gear','Fire extinguisher'];
+document.getElementById('sugg').innerHTML=SUG.map(s=>'<button type="button">'+s+'</button>').join('');
+document.getElementById('sugg').addEventListener('click',e=>{const b=e.target.closest('button');if(b)ask(b.textContent);});
+document.getElementById('chatForm').addEventListener('submit',e=>{e.preventDefault();const q=cin.value.trim();if(!q)return;cin.value='';ask(q);});
+document.getElementById('chatOpen').addEventListener('click',()=>{chat.classList.add('show');if(!msgs.children.length)add('Hi! I can answer questions about the house using this guide. Try one below or type your own.','bot');try{lucide.createIcons();}catch(_){}});
+document.getElementById('chatClose').addEventListener('click',()=>chat.classList.remove('show'));
+msgs.addEventListener('click',e=>{if(e.target.closest('a.go'))chat.classList.remove('show');});
 
 // Back to top
 const tt=document.getElementById('totop');
