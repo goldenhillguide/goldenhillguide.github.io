@@ -294,6 +294,17 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
   </ol>
 </section>
 
+<section id="neighbor">
+  <div class="sh"><span class="script">Good</span><h2>Neighbor Guidelines</h2></div>
+  <p>San Diego requires every short-term rental to share these City of San Diego guidelines with guests (SDMC &sect; 510.0107). Thanks for helping us be good neighbors in Golden Hill.</p>
+  <div class="card"><h3>Your rental</h3><p><b>Address:</b> 1045 32nd St, Unit 2, San Diego, CA 92102<br><b>Local contact:</b> Justin, message anytime in the Airbnb app<br><b>Guest rooms:</b> 3<br><b>Maximum occupants:</b> 7</p></div>
+  <div class="card"><h3>Safety</h3><p>For any emergency, call <a href="tel:911">911</a>. San Diego Police non-emergency: <a href="tel:6195312000">(619) 531-2000</a> or <a href="tel:8584843154">(858) 484-3154</a>.</p></div>
+  <div class="card"><h3>Noise</h3><p>Keep music and other noise at a level that respects the neighbors, and keep it down during quiet hours (10 PM to 7 AM). City noise violations can bring citations of up to $1,000 each, issued to both guests and the host.</p></div>
+  <div class="card"><h3>Respect the neighborhood</h3><p>Please follow all laws and help keep Golden Hill a quiet residential street. Guests may have to repay the City for police responses to disturbances, and guests who stay past checkout can be treated as trespassers.</p></div>
+  <div class="card"><h3>Parking</h3><p>Park legally, only in spaces meant for vehicles. Use the 2-car garage first; street parking out front is fine overnight. Don't block the shared driveway or neighbors' garages. <a href="#directions">Parking details</a></p></div>
+  <div class="card"><h3>Trash &amp; recycling</h3><p><b>Bins:</b> in the garage (black = trash, blue = recycling)<br><b>Pickup:</b> trash and recycling every Wednesday morning<br><b>Where:</b> exit the garage, turn right, and leave both bins at the curb<br><b>When:</b> out Tuesday night (at the curb by 6 AM Wednesday), back in the garage by 6 PM Wednesday</p><p style="margin-top:8px">Keep bins at least 3 feet from anything else and clear of overhead branches, lids closed, handles facing the street, and don't block street parking. <a href="#trash">Trash details</a></p></div>
+</section>
+
 <section id="know">
   <div class="sh"><span class="script">Things</span><h2>To Know</h2></div>
   <div class="card"><h3>Make yourself comfy</h3><p>We love a shoes-off house. If you're comfortable with it, leaving shoes by the front door helps keep the floors and carpets fresh for everyone.</p></div>
@@ -349,7 +360,7 @@ body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
 <section id="trash">
   <div class="sh"><span class="script">Trash &amp;</span><h2>Recycling</h2></div>
   <div class="photo" style="aspect-ratio:auto"><img src="img/trash-bins.jpg" alt="Where to put the trash and recycling bins: exit the garage, turn right, and leave both bins at the curb" loading="lazy" style="height:auto"></div>
-  <div class="card"><h3>Trash</h3><p>Trash and recycling pickup is every Wednesday morning. Please roll both bins (in the garage) out to the curb Tuesday night, then bring them back into the garage after pickup on Wednesday.</p></div>
+  <div class="card"><h3>Trash</h3><p>Trash and recycling pickup is every Wednesday morning. Please roll both bins (in the garage) out to the curb Tuesday night, then bring them back into the garage by 6 PM Wednesday.</p></div>
   <div class="card"><h3>Recycling</h3><p>Bottles, cans, paper, and cardboard go loose in the blue bin. Please break down boxes so they fit.</p></div>
 </section>
 
@@ -532,7 +543,7 @@ document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',a
 // App-style views
 const GROUPS={
   home:{title:'Welcome',eyebrow:'Golden Hill Townhome',items:[['welcome','Welcome','home'],['house','The House','sofa'],['host','Your Host','smile']]},
-  stay:{title:'Your Stay',eyebrow:'Everything for the house',desc:'Check-in, WiFi, parking, house rules and how everything works.',items:[['checkin','Check In & Out','key-round'],['wifi','WiFi','wifi'],['directions','Directions & Parking','map-pin'],['rules','House Rules','clipboard-list'],['know','Good to Know','lightbulb'],['bedrooms','Bedrooms','bed-double'],['kitchen','Kitchen','chef-hat'],['amenities','Amenities','sparkles'],['baby','Baby Gear','baby'],['trash','Trash & Recycling','trash-2'],['pets','Pet Policy','paw-print'],['checkout','Before You Go','luggage'],['review','Leave a Review','star']]},
+  stay:{title:'Your Stay',eyebrow:'Everything for the house',desc:'Check-in, WiFi, parking, house rules and how everything works.',items:[['checkin','Check In & Out','key-round'],['wifi','WiFi','wifi'],['directions','Directions & Parking','map-pin'],['rules','House Rules','clipboard-list'],['neighbor','Good Neighbor Guidelines','house'],['know','Good to Know','lightbulb'],['bedrooms','Bedrooms','bed-double'],['kitchen','Kitchen','chef-hat'],['amenities','Amenities','sparkles'],['baby','Baby Gear','baby'],['trash','Trash & Recycling','trash-2'],['pets','Pet Policy','paw-print'],['checkout','Before You Go','luggage'],['review','Leave a Review','star']]},
   explore:{title:'Explore',eyebrow:'Golden Hill & San Diego',desc:'Our favorite places to eat, drink, see and do nearby.',items:[['tips','Local Tips','compass'],['restaurants','Restaurants','utensils'],['bars','Bars & Wine','wine'],['eat','Coffee & Casual','coffee'],['see','Places to See','landmark'],['do','Things to Do','waves'],['kids','For Kids','baby'],['around','Getting Around','bus'],['nearest','Nearest Stores','shopping-basket']]},
   help:{title:'Help',eyebrow:'We are a message away',desc:'Emergency info, answers to common questions, or message Justin anytime.',items:[['emergency','Emergency','briefcase-medical'],['faq','FAQ','message-circle-question']]}
 };
@@ -616,6 +627,7 @@ const KB=[
  {k:'park parking garage car cars street overnight ev charger charging charge tesla electric outlet plug cable nema 14-50',a:'You have a private 2-car garage, and street parking out front is fine overnight. To charge an EV, the garage has a 240v NEMA 14-50 outlet. Bring a compatible cable (like a Tesla Mobile Connector with the 14-50 adapter or a portable Level 2 charger with a 14-50 plug). Please don\'t block the shared driveway or neighbors\' garages, and check signs for street sweeping.',s:'directions'},
  {k:'address where located location directions airport drive',a:'1045 32nd St, Unit 2, San Diego, CA 92102, in Golden Hill across from the 32nd St Canyon trailhead. About 15 minutes from the airport, 7 from Petco Park and the Gaslamp, and 10 from Balboa Park and the Zoo.',s:'directions'},
  {k:'pet pets dog dogs cat cats animal fee',a:'Pets are welcome for a $150 fee per pet, per stay. Please include every pet in your booking, keep them off beds and furniture, pick up after them, don\'t leave them alone for long periods, and keep barking down during quiet hours. Pet damage will be charged.',s:'pets'},
+ {k:'good neighbor guidelines city stro license short term rental ordinance police non emergency citation occupancy max maximum occupants',a:'San Diego Good Neighbor Guidelines: up to 7 occupants in 3 guest rooms, keep noise respectful (quiet hours 10 PM to 7 AM; city noise citations can reach $1,000), park legally, and bins out Tuesday night, back in by 6 PM Wednesday. Emergency: 911. Police non-emergency: (619) 531-2000.',s:'neighbor'},
  {k:'quiet hours noise loud music',a:'Quiet hours are 10 PM to 7 AM. We share walls with neighbors on both sides.',s:'rules'},
  {k:'smoke smoking vape vaping cigarette weed',a:'No smoking or vaping anywhere on the property, inside or out, including e-cigarettes.',s:'rules'},
  {k:'party parties event events guests visitors people max maximum',a:'Parties and events aren\'t allowed. Up to 7 overnight guests, and only the guests on your booking.',s:'rules'},
