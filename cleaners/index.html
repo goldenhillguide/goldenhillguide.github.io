@@ -4,210 +4,306 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<title>Golden Hill Cleaner's Guide</title>
+<title>Golden Hill Cleaning Guide</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--cream:#f5efe6;--tan:#b2957a;--tan-d:#8f7359;--ink:#3d3a36;--muted:#7a736b;--line:#e6dccd;--ok:#5f7d5a;
+:root{--cream:#f5efe6;--tan:#b2957a;--tan-d:#8f7359;--ink:#3d3a36;--muted:#7a736b;--line:#e6dccd;--ok:#4f7a4a;
 --serif:"Cormorant Garamond",Georgia,serif;--script:"Allura",cursive;--sans:"Montserrat",system-ui,sans-serif}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:#fff;color:var(--ink);font:400 15.5px/1.6 var(--sans);padding-bottom:calc(30px + env(safe-area-inset-bottom))}
-.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:130px}
+body{margin:0;background:#fff;color:var(--ink);font:500 17px/1.45 var(--sans);padding-bottom:calc(40px + env(safe-area-inset-bottom))}
+.wrap{max-width:760px;margin:0 auto;padding:0 14px}
+
+/* header */
 .top{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
-.bar{height:58px;display:flex;align-items:center;justify-content:space-between;max-width:720px;margin:0 auto;padding:0 20px}
-.brand{font:600 20px/1 var(--serif);letter-spacing:.06em;text-transform:uppercase;color:var(--ink);text-decoration:none}
-.brand span{font:400 25px/1 var(--script);text-transform:none;letter-spacing:0;color:var(--tan);margin-left:4px}
-.prog{font:600 12px/1 var(--sans);color:var(--tan-d)}
-.pbar{height:4px;background:var(--cream)}
-.pbar i{display:block;height:100%;width:0;background:var(--tan);transition:width .25s}
-.intro{padding:30px 0 6px}
-.eyebrow{font:600 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--tan)}
-h1{margin:8px 0 6px;font:500 40px/1.05 var(--serif)}
-.lead{color:var(--muted);margin:0 0 18px}
-.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0 0 18px}
-.fact{background:var(--cream);border-radius:14px;padding:12px 10px;text-align:center}
-.fact b{display:block;font:600 22px/1.1 var(--serif)}
-.fact span{font:600 9.5px/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.tile{display:flex;align-items:center;gap:10px;min-height:56px;padding:10px 14px;background:var(--cream);border-radius:16px;text-decoration:none;color:var(--ink);font:600 13.5px/1.2 var(--sans)}
-.tile svg{width:20px;height:20px;color:var(--tan-d);flex:none}
-.tile small{margin-left:auto;white-space:nowrap;font:600 11px/1 var(--sans);color:var(--tan-d)}
-section{scroll-margin-top:74px;padding:34px 0 4px}
-.sh{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin:0 0 10px;border-bottom:1px solid var(--line);padding-bottom:8px}
-.sh h2{margin:0;font:500 28px/1.1 var(--serif)}
-.sh .count{font:600 12px/1 var(--sans);color:var(--tan-d);white-space:nowrap}
-.note{background:var(--cream);border-radius:14px;padding:12px 14px;margin:0 0 10px;font-size:14px}
-.note b{font-weight:600}
-ul.cl{list-style:none;margin:0;padding:0}
-ul.cl li{border-bottom:1px solid var(--line)}
-ul.cl label{display:grid;grid-template-columns:28px 1fr;gap:12px;padding:12px 2px;cursor:pointer;-webkit-tap-highlight-color:transparent}
-ul.cl input{appearance:none;-webkit-appearance:none;width:24px;height:24px;border:2px solid var(--tan);border-radius:7px;margin:1px 0 0;display:grid;place-items:center;cursor:pointer}
-ul.cl input:checked{background:var(--tan)}
-ul.cl input:checked::after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg) translate(-1px,-1px)}
-ul.cl input:checked + span{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line)}
-.sub{font:600 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--tan);margin:18px 0 2px}
-.todo{color:#b0603a;font-weight:600}
-table.loc{width:100%;border-collapse:collapse;font-size:14px}
-table.loc td{padding:11px 4px;border-bottom:1px solid var(--line);vertical-align:top}
-table.loc td:first-child{font-weight:600;width:44%}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 20px;border-radius:999px;border:0;background:var(--tan);color:#fff;font:600 13px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;cursor:pointer}
-.btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
-.btns{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
-.foot{text-align:center;padding:40px 20px;background:var(--cream);margin-top:40px;color:var(--muted);font-size:13px}
-.foot .s{font:400 40px/1 var(--script);color:var(--tan)}
-.room{border:1px solid var(--line);border-radius:18px;padding:16px;margin:0 0 14px}
-.room h3{margin:0;font:500 24px/1.1 var(--serif);display:flex;align-items:center;gap:10px}
-.room h3 i{width:14px;height:14px;border-radius:50%;display:inline-block;flex:none}
-.room .rs{color:var(--muted);font-size:13px;margin:2px 0 0}
-.room ul{margin:10px 0 12px;padding-left:18px;font-size:14px}
-.gal{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0;padding:0 0 4px;scrollbar-width:none}
-.gal::-webkit-scrollbar{display:none}
-.gal figure{flex:0 0 62%;margin:0;scroll-snap-align:start}
-.gal img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:12px;display:block;background:var(--cream);cursor:zoom-in}
-.gal figcaption{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.35}
-.lb{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;padding:20px}
-.lb.show{display:flex}
-.lb img{max-width:100%;max-height:100%;border-radius:10px}
-@media print{.gal{flex-wrap:wrap;overflow:visible}.gal figure{flex:0 0 31%}.room{break-inside:avoid}}
+.bar{height:54px;display:flex;align-items:center;gap:10px;max-width:760px;margin:0 auto;padding:0 14px}
+.brand{font:600 18px/1 var(--serif);letter-spacing:.06em;text-transform:uppercase;color:var(--ink);text-decoration:none;flex:1;white-space:nowrap}
+.brand span{font:400 24px/1 var(--script);text-transform:none;letter-spacing:0;color:var(--tan);margin-left:3px}
+.lang{display:flex;background:var(--cream);border-radius:99px;padding:3px}
+.lang button{border:0;background:none;font:700 13px/1 var(--sans);padding:9px 12px;border-radius:99px;color:var(--muted);cursor:pointer}
+.lang button.on{background:var(--ink);color:#fff}
+.prog{font:700 13px/1 var(--sans);color:var(--tan-d);min-width:40px;text-align:right}
+.pbar{height:5px;background:var(--cream)}
+.pbar i{display:block;height:100%;width:0;background:var(--ok);transition:width .25s}
+.nav{display:flex;gap:8px;overflow-x:auto;padding:10px 14px;max-width:760px;margin:0 auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:3px;min-width:68px;padding:8px 6px;border-radius:14px;background:var(--cream);text-decoration:none;color:var(--ink);font:600 11px/1.15 var(--sans);text-align:center}
+.nav a b{font-size:24px;line-height:1}
+.nav a.on{background:var(--ink);color:#fff}
+.nav a.done{box-shadow:inset 0 0 0 2px var(--ok)}
+
+/* codes */
+.codes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0 6px}
+.code{background:var(--ink);color:#fff;border-radius:18px;padding:14px;text-align:center}
+.code .e{font-size:26px}
+.code .n{font:700 30px/1.1 var(--sans);letter-spacing:.08em;margin:4px 0}
+.code .t{font-size:13px;opacity:.85;line-height:1.3}
+
+/* sections */
+section{padding:22px 0 6px}
+.sh{display:flex;align-items:center;gap:12px;margin:0 0 12px}
+.sh .ic{font-size:34px;line-height:1}
+.sh h2{margin:0;font:600 30px/1.05 var(--serif)}
+.sh small{display:block;font:600 13px/1.2 var(--sans);color:var(--muted);margin-top:3px}
+
+/* chips = what must be there */
+.chips{display:grid;gap:8px;margin:0 0 14px}
+.chip{display:flex;align-items:center;gap:12px;background:var(--cream);border-radius:16px;padding:10px 14px}
+.chip .e{font-size:28px;line-height:1;flex:0 0 34px;text-align:center}
+.chip .n{font:700 24px/1 var(--sans);flex:0 0 auto;min-width:54px;text-align:center;background:#fff;border-radius:12px;padding:8px 6px}
+.chip .t{font-size:15px;line-height:1.3}
+.sw{display:inline-block;width:16px;height:16px;border-radius:50%;vertical-align:-2px;margin-right:6px;border:1px solid rgba(0,0,0,.15)}
+
+/* checklist rows */
+.rows{display:grid;gap:8px;margin:0 0 14px}
+.row{display:flex;align-items:center;gap:12px;background:var(--cream);border-radius:16px;padding:12px 14px;cursor:pointer;user-select:none}
+.row .e{font-size:30px;flex:0 0 36px;text-align:center}
+.row .t{flex:1;font-size:16px;line-height:1.3}
+.ck{flex:0 0 44px;height:44px;border-radius:50%;border:3px solid var(--tan);display:grid;place-items:center;font-size:24px;color:transparent;background:#fff}
+.is-done .ck{background:var(--ok);border-color:var(--ok);color:#fff}
+.row.is-done{background:#e6efe3}
+
+/* photos */
+.photos{display:grid;gap:16px}
+.ph{border-radius:20px;overflow:hidden;background:var(--cream);position:relative}
+.ph img{display:block;width:100%;height:auto;cursor:zoom-in}
+.ph .cap{display:flex;align-items:center;gap:12px;padding:12px 14px;cursor:pointer;user-select:none}
+.ph .cap .t{flex:1;font:600 17px/1.3 var(--sans)}
+.ph .num{position:absolute;top:12px;left:12px;background:rgba(61,58,54,.85);color:#fff;font:700 14px/1 var(--sans);padding:7px 11px;border-radius:99px}
+.ph.is-done{background:#e6efe3}
+.ph.is-done img{opacity:.75}
+
+.reset{display:block;margin:30px auto 0;border:2px solid var(--line);background:#fff;color:var(--muted);font:700 14px/1 var(--sans);padding:14px 22px;border-radius:99px;cursor:pointer}
+.foot{text-align:center;color:var(--muted);font-size:14px;margin:24px 0 0}
+.foot .s{font:400 34px/1 var(--script);color:var(--tan)}
+
+/* lightbox */
+.lb{position:fixed;inset:0;background:#000;z-index:100;display:none;flex-direction:column}
+.lb.open{display:flex}
+.lb .img{flex:1;display:flex;align-items:center;justify-content:center;overflow:hidden;touch-action:pan-y}
+.lb img{max-width:100%;max-height:100%;object-fit:contain}
+.lb .cap{color:#fff;font:600 18px/1.35 var(--sans);padding:14px 18px calc(18px + env(safe-area-inset-bottom));text-align:center}
+.lb .x,.lb .pv,.lb .nx{position:absolute;border:0;background:rgba(255,255,255,.18);color:#fff;width:52px;height:52px;border-radius:50%;font-size:26px;cursor:pointer}
+.lb .x{top:calc(12px + env(safe-area-inset-top));right:12px}
+.lb .pv{left:10px;top:45%}.lb .nx{right:10px;top:45%}
+.lb .cnt{position:absolute;top:calc(26px + env(safe-area-inset-top));left:18px;color:#fff;font:700 14px/1 var(--sans);opacity:.8}
+
+@media (min-width:700px){.photos{grid-template-columns:1fr 1fr}}
 @media print{
-  .top,.btns,.tiles,.noprint{display:none!important}
-  body{font-size:11pt}
-  section{padding:14px 0 0;break-inside:auto}
-  ul.cl li{break-inside:avoid}
-  ul.cl input{width:14px;height:14px;border-width:1.5px;border-radius:3px}
-  ul.cl label{grid-template-columns:20px 1fr;padding:5px 0}
-  .foot{display:none}
+  .top,.reset,.lb{display:none!important}
+  body{font-size:13px;padding:0}
+  section{break-inside:auto;padding-top:14px}
+  .sh{break-after:avoid}
+  .photos{grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .ph{break-inside:avoid;border-radius:12px}
+  .ph .cap{padding:6px 8px}.ph .cap .t{font-size:12px}
+  .ph .ck{display:none}
+  .chip{break-inside:avoid;padding:6px 10px}.chip .e{font-size:20px}.chip .n{font-size:16px;padding:5px}
+  .row{break-inside:avoid;padding:6px 10px}.row .e{font-size:20px}.row .ck{width:24px;height:24px;flex-basis:24px;border-width:2px}
+  .codes{break-inside:avoid}
+  .ph.is-done,.row.is-done{background:var(--cream)}
 }
 </style>
 </head>
 <body>
 <header class="top">
-  <div class="bar"><a class="brand" href="#top">Golden Hill<span>Cleaning</span></a><span class="prog" id="prog">0%</span></div>
+  <div class="bar">
+    <a class="brand" href="#top">Golden Hill<span>Cleaning</span></a>
+    <div class="lang"><button data-l="en">EN</button><button data-l="es">ES</button></div>
+    <div class="prog" id="prog">0%</div>
+  </div>
   <div class="pbar"><i id="pfill"></i></div>
+  <nav class="nav" id="nav"></nav>
 </header>
 
 <main class="wrap" id="top">
-  <div class="intro">
-    <div class="eyebrow">1045 32nd St, Unit 2 · Turnover standard</div>
-    <h1>Cleaner's Guide</h1>
-    <p class="lead">Every turnover, every time. Work top to bottom, check items off as you go, and send photos to Justin when you're done.</p>
-    <div class="facts">
-      <div class="fact"><b>11 AM</b><span>Guest checkout</span></div>
-      <div class="fact"><b>4 PM</b><span>Next check-in</span></div>
-      <div class="fact"><b>3 / 3.5</b><span>Beds / Baths</span></div>
-    </div>
-    <div class="tiles" id="tiles"></div>
-  </div>
-  <div id="sections"></div>
-
-  <div class="btns noprint">
-    <button class="btn" id="resetBtn" type="button">Start a new turnover</button>
-    <button class="btn ghost" id="printBtn" type="button">Print checklist</button>
-  </div>
+  <div class="codes" id="codes"></div>
+  <div id="areas"></div>
+  <button class="reset" id="reset"></button>
+  <div class="foot"><div class="s">Thank you</div><span id="footT"></span></div>
 </main>
 
-<footer class="foot"><div class="s">Thank you</div>Questions? Message Justin anytime.</footer>
+<div class="lb" id="lb">
+  <span class="cnt" id="lbCnt"></span>
+  <button class="x" id="lbX" aria-label="Close">&#10005;</button>
+  <div class="img" id="lbImg"><img alt=""></div>
+  <button class="pv" id="lbP" aria-label="Previous">&#8249;</button>
+  <button class="nx" id="lbN" aria-label="Next">&#8250;</button>
+  <div class="cap" id="lbCap"></div>
+</div>
 
-<script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
 <script>
 // ===== EDIT CONTENT HERE =====
-// "[ADD]" marks details Justin still needs to fill in.
-const GUIDE=[
- {id:'arrive',title:'1. Arrive',icon:'door-open',note:'Start after 11 AM checkout. Supply cabinets: code 000, then slide down the red button. Bottom floor closet: 1237 then #.',items:[
-  'Walk the house. Photograph any damage, stains, or left items and text Justin',
-  'Start a load of towels']},
- {id:'kitchen',title:'2. Kitchen & Living',icon:'chef-hat',items:[
-  'Run and empty the dishwasher; put dishes away',
-  'Clear guest food from the fridge; wipe counters, stove, microwave, and sink',
-  'Paper towels: 1 on the holder, 2 under the sink',
-  'Keurig: empty the tray and load 8 pods in the rack',
-  'Living room: dust, fluff pillows, line up the 3 remotes on the mantel']},
- {id:'bedrooms',title:'3. Bedrooms',icon:'bed-double',note:'Clean sheets are in the lower locked cabinet in the primary suite. See Room Setups for photos.',items:[
-  'Remake used beds: primary BLUE, bedroom two TAUPE, bedroom three BEIGE',
-  'Check under beds and in drawers for left items',
-  'Dust and empty the trash']},
- {id:'baths',title:'4. Bathrooms',icon:'bath',note:'Towels match the bedroom color. Half bath = the marble powder room.',items:[
-  'Clean toilets, showers, tubs, sinks, and mirrors',
-  'Set out fresh towels like the photos; bath mat over the tub edge',
-  'Roll on every holder (fold the end) + 3 spare rolls; refill soaps and shampoo',
-  'Restock 2 bath towels + 1 hand towel under each bedroom bath sink',
-  'Mop the floors']},
- {id:'laundry',title:'5. Laundry & Floors',icon:'shirt',note:'Washer and dryer: third floor. Vacuum and Swiffer: second floor closet near the stairs.',items:[
-  'Wash, dry, and fold; return linens to the primary suite cabinets',
-  'Clean the lint trap and leave the washer door cracked',
-  'Vacuum carpets and stairs; Swiffer hard floors']},
- {id:'reset',title:'6. Lock Up',icon:'sparkles',note:'Trash pickup is Wednesday morning. Bins out Tuesday night.',items:[
-  'Empty all trash into the garage bins',
-  'Put baby gear back in the pantry if it was used',
-  'Set the A/C to 76; turn off lights, TV, and fireplaces',
-  'Close windows and the garage; lock the front door (press the check mark)',
-  'Text Justin a photo of each room and anything running low']}
+// Every text has an English (en) and Spanish (es) version.
+const C={blue:'#4a6fa5',gray:'#9b9b9b',beige:'#d8c6a6',taupe:'#b3a290'};
+const sw=c=>'<span class="sw" style="background:'+C[c]+'"></span>';
+
+const UI={
+ en:{done:'done',reset:'Start a new clean',foot:'Questions? Text Justin.',confirm:'Clear all checkmarks?',
+  codeCab:'All 4 supply cabinets, then slide the red button down',codeCloset:'Bottom floor closet: toilet paper, paper towels, paint'},
+ es:{done:'listo',reset:'Empezar nueva limpieza',foot:'¿Preguntas? Mande mensaje a Justin.',confirm:'¿Borrar todas las marcas?',
+  codeCab:'Los 4 gabinetes, luego deslice el botón rojo hacia abajo',codeCloset:'Clóset planta baja: papel higiénico, toallas de papel, pintura'}
+};
+
+// Bathroom standard (3 full baths)
+const bath=(color,es,tp)=>[
+ {e:'🛁',n:'2 + 2',t:{en:sw(color)+'Bath towels: 2 out, 2 under the sink',es:sw(color)+'Toallas de baño: 2 afuera, 2 debajo del lavabo'}},
+ {e:'🖐️',n:'1 + 1',t:{en:sw(color)+'Hand towels: 1 on the holder, 1 under the sink',es:sw(color)+'Toallas de mano: 1 en el soporte, 1 debajo del lavabo'}},
+ {e:'🧼',n:'3',t:{en:sw(color)+'Washcloths on the vanity',es:sw(color)+'Toallitas en el lavabo'}},
+ tp==='under'
+  ?{e:'🧻',n:'1 + 1',t:{en:'Toilet paper: 1 on the holder, 1 extra under the sink (electric toilet)',es:'Papel higiénico: 1 en el soporte, 1 extra debajo del lavabo (inodoro eléctrico)'}}
+  :{e:'🧻',n:'1 + 1',t:{en:'Toilet paper: 1 on the holder, 1 extra on top of the toilet',es:'Papel higiénico: 1 en el soporte, 1 extra encima del inodoro'}}
 ];
-const LOCATIONS=[
- ['Vacuum & Swiffer','Second floor closet near the stairs going down'],
- ['Baby gear','Pantry next to the kitchen (booster high chair, 2 baby gates, play pen)'],
- ['Fire extinguisher #1 & first aid kit','Under the kitchen sink'],
- ['Fire extinguisher #2','Third floor cabinet next to the laundry'],
- ['Washer & dryer','Third floor'],
- ['Trash & recycling bins','Garage'],
- ['Breakers','Garage'],
- ['Primary bath spares','Under the RIGHT sink: 3 TP rolls, 2 blue bath towels, 1 blue hand towel'],
- ['Bedroom two bath spares','Under the en suite sink: 3 TP rolls, 2 gray bath towels, 1 gray hand towel'],
- ['Bedroom three bath spares','3 TP rolls on top of the toilet; 2 beige bath towels + 1 beige hand towel under the sink'],
- ['Powder room spares','3 TP rolls on top of the toilet'],
- ['Kitchen locked cabinets (2)','Cleaning supplies, shampoo, conditioner, body wash and hand soap refills, kitchen scrubbers, rags, Keurig pods'],
- ['Primary suite upper locked cabinet','Towels: washcloths on top, hand towels in the middle, bath towels on the bottom (gray and beige)'],
- ['Primary suite lower locked cabinet','Sheets by room: top shelf primary (blue) with laundry detergent, middle shelf bedroom two, bottom shelf bedroom three'],
- ['All 4 cabinet locks','Code 000, then press and slide down the red button'],
- ['Bottom floor locked closet','Code 1237 then #. Backstock toilet paper, paper towels, touch-up paint'],
- ['Dish soap & paper towels','Under the kitchen sink'],
- ['Iron & ironing board','Walk-in closet'],
- ['Restock supplies (soap refills, coffee)','Locked kitchen cabinets']
-];
-const ROOMS=[
- {id:'r-primary',name:'Primary Suite',color:'#7d9cc4',linens:['Sheets: blue','Pillowcases: blue','Comforter: blue and white','Shower: 2 blue bath towels draped over the glass door','Vanity: blue hand towel on the bar + 3 rolled blue washcloths','Under the RIGHT sink: 3 TP rolls, 2 blue bath towels, 1 blue hand towel'],photos:[['primary-sheet','Fitted sheet: blue'],['primary-made','Finished bed'],['primary-shower','Shower: 2 bath towels over the glass door'],['primary-vanity','Vanity: hand towel + 3 rolled washcloths'],['primary-bath-stock','Under right sink: 3 TP, bath towels, hand towel']]},
- {id:'r-bed2',name:'Bedroom Two',sub:'Across from the primary suite',color:'#b9a58c',linens:['Sheets: taupe','Pillowcases: taupe + orange, black and white patterned shams','Duvet: patterned','Towels: gray','Vanity: gray hand towel on the bar + rolled gray washcloths','Tub: striped bath mat over the edge','Under the en suite sink: 3 TP rolls, 2 gray bath towels, 1 gray hand towel'],photos:[['bed2-sheet','Fitted sheet: taupe'],['bed2-made','Finished bed'],['bed2-vanity','Vanity: hand towel + rolled washcloths'],['bed2-tub','Tub: bath mat over the edge'],['bed2-bath-stock','Under sink: 3 TP, gray bath towels, hand towel']]},
- {id:'r-bed3',name:'Bedroom Three',color:'#5f7d5a',linens:['Sheets: beige','Pillowcases: beige and white','Bedding: white with green throw across the foot','Towels & hand towels: beige, hung on the wall bar','Vanity: rolled beige washcloths','Tub: brown bath mat over the edge','On top of the toilet: 3 TP rolls','Under the sink: 2 beige bath towels, 1 beige hand towel'],photos:[['bed3-sheet','Fitted sheet'],['bed3-made','Finished bed with green throw'],['bed3-bath','Bath: beige towels on the bar, mat over the tub'],['bed3-vanity','3 TP rolls on the tank + rolled washcloths']]},
- {id:'r-cabinets',name:'Locked Supply Cabinets',sub:'4 cabinets: code 000, then press and slide down the red button. Bottom floor closet: 1237 then #',color:'#3d3a36',linens:['Kitchen (2 cabinets): cleaners, shampoo, conditioner, soap refills, scrubbers, rags, Keurig pods','Primary suite upper: washcloths, hand towels, bath towels','Primary suite lower: sheets by room, plus laundry detergent','Bottom floor closet (code 1237 then #): backstock toilet paper, paper towels, touch-up paint'],photos:[['lock','Lock: set 000, then press and slide down the red button'],['cab-kitchen','Kitchen: supplies, refills, Keurig pods'],['cab-towels','Primary suite upper: towels'],['cab-linens','Primary suite lower: top primary (blue) + detergent, middle bedroom two, bottom bedroom three']]},
- {id:'r-kitchen',name:'Kitchen & Living Room',sub:'Match these photos every turnover',color:'#8a9a7b',linens:['Island: clear and wiped, 3 stools tucked in, dish soap, hand soap and sponge by the sink','Counter: knife block, guest guide sign, and trivet by the stove; nothing else left out','Paper towels: 1 roll on the holder + 2 spares under the sink','Under the sink: dishwasher detergent, trash bags, all-purpose cleaner, fire extinguisher, first aid kit','Coffee bar: 8 Keurig pods in the side rack (4 per column)','Living room: sofa cushions fluffed, houndstooth pillow centered, brown pillow on the front chair, coasters on the coffee table','Remotes: all 3 lined up on the left corner of the fireplace mantel'],photos:[['kitchen-island','Island: wiped and clear, stools tucked in'],['kitchen-counter','Counter: knife block, trivet, guest guide sign'],['kitchen-sink','Under the sink: supplies, extinguisher, first aid kit'],['paper-towel','Fresh paper towel roll'],['keurig','Keurig: fill the side rack with 8 pods (4 per column)'],['living','Living room: finished setup'],['living-remotes','Remotes lined up on the mantel corner']]},
- {id:'r-details',name:'Half Bath & Extras',sub:'Half bath = the marble powder room',color:'#b2957a',linens:['Half bath: blue hand towel on the ring','Half bath: 3 spare TP rolls on top of the toilet','Every bathroom: 1 roll on the holder, folded to a point'],photos:[['powder','Half bath: blue hand towel on the ring'],['powder-tp','Half bath: 3 TP rolls on the tank'],['tp-fold','TP point fold'],['closet-iron','Iron & ironing board']]}
+const remotes=(list)=>({e:'🎛️',n:String(list.length),t:{
+ en:'Remotes: '+list.map(k=>({tv:'TV',fire:'fireplace',blinds:'blinds',fan:'fan'})[k]).join(', '),
+ es:'Controles: '+list.map(k=>({tv:'TV',fire:'chimenea',blinds:'persianas',fan:'ventilador'})[k]).join(', ')}});
+
+const AREAS=[
+ {id:'start',e:'🚪',name:{en:'Start',es:'Inicio'},rows:[
+  {e:'📷',t:{en:'Walk the house. Photo any damage or left items and text Justin',es:'Revise la casa. Tome foto de daños u objetos olvidados y mande a Justin'}},
+  {e:'🧺',t:{en:'Start the towels in the washer (3rd floor)',es:'Ponga las toallas en la lavadora (3er piso)'}},
+  {e:'🧹',t:{en:'Vacuum + Swiffer: 2nd floor closet by the stairs',es:'Aspiradora + Swiffer: clóset del 2º piso junto a la escalera'}}
+ ]},
+ {id:'kitchen',e:'🍳',name:{en:'Kitchen',es:'Cocina'},chips:[
+  {e:'🧻',n:'1 + 1',t:{en:'Paper towels: 1 on the holder, 1 under the sink',es:'Toallas de papel: 1 en el soporte, 1 debajo del fregadero'}},
+  {e:'☕',n:'8',t:{en:'Keurig pods in the rack on the Keurig',es:'Cápsulas Keurig en el soporte de la Keurig'}},
+  {e:'✨',n:'0',t:{en:'Nothing left on counters except what is in the photos',es:'Nada en las encimeras, solo lo de las fotos'}}
+ ],photos:[
+  ['kitchen-island',{en:'Island: clean and clear, stools in',es:'Isla: limpia y despejada, bancos adentro'}],
+  ['kitchen-counter',{en:'Counter: knife block, trivet, guide sign only',es:'Encimera: solo cuchillos, salvamanteles y letrero'}],
+  ['keurig',{en:'8 pods in the Keurig rack',es:'8 cápsulas en el soporte de la Keurig'}],
+  ['paper-towel',{en:'1 paper towel roll on the holder',es:'1 rollo de toallas de papel en el soporte'}],
+  ['kitchen-sink',{en:'Under the sink: 1 paper towel roll + supplies',es:'Debajo del fregadero: 1 rollo + productos'}]
+ ]},
+ {id:'living',e:'🛋️',name:{en:'Living Room',es:'Sala'},chips:[
+  remotes(['tv','fire','blinds']),
+  {e:'🛋️',n:'✓',t:{en:'Cushions and pillows like the photo',es:'Cojines y almohadas como en la foto'}}
+ ],photos:[
+  ['living',{en:'Living room: finished',es:'Sala: terminada'}],
+  ['living-remotes',{en:'3 remotes on the corner: TV, fireplace, blinds',es:'3 controles en la esquina: TV, chimenea, persianas'}]
+ ]},
+ {id:'primary',e:'👑',name:{en:'Primary Bedroom',es:'Recámara Principal'},color:'blue',chips:[
+  {e:'🛏️',n:'✓',t:{en:sw('blue')+'Blue sheets and pillowcases',es:sw('blue')+'Sábanas y fundas azules'}},
+  ...bath('blue','azul','under'),
+  remotes(['fan','blinds','fire'])
+ ],photos:[
+  ['primary-made',{en:'Bed: finished',es:'Cama: terminada'}],
+  ['primary-sheet',{en:'Blue fitted sheet',es:'Sábana ajustable azul'}],
+  ['primary-shower',{en:'2 blue bath towels on the shower door',es:'2 toallas de baño azules en la puerta de la ducha'}],
+  ['primary-vanity',{en:'Vanity: hand towel + 3 washcloths',es:'Lavabo: toalla de mano + 3 toallitas'}],
+  ['primary-bath-stock',{en:'Under the RIGHT sink: 2 bath towels, 1 hand towel, 1 toilet paper',es:'Debajo del lavabo DERECHO: 2 toallas de baño, 1 de mano, 1 papel'}]
+ ]},
+ {id:'bed2',e:'2️⃣',name:{en:'Bedroom 2',es:'Recámara 2'},color:'gray',chips:[
+  {e:'🛏️',n:'✓',t:{en:sw('taupe')+'Taupe sheets',es:sw('taupe')+'Sábanas color taupe'}},
+  ...bath('gray','gris','under'),
+  remotes(['fan'])
+ ],photos:[
+  ['bed2-made',{en:'Bed: finished',es:'Cama: terminada'}],
+  ['bed2-sheet',{en:'Taupe fitted sheet',es:'Sábana ajustable taupe'}],
+  ['bed2-vanity',{en:'Vanity: gray hand towel + 3 washcloths',es:'Lavabo: toalla de mano gris + 3 toallitas'}],
+  ['bed2-tub',{en:'Tub: bath mat over the edge',es:'Tina: tapete sobre el borde'}],
+  ['bed2-bath-stock',{en:'Under the sink: 2 gray bath towels, 1 hand towel, 1 toilet paper',es:'Debajo del lavabo: 2 toallas de baño grises, 1 de mano, 1 papel'}]
+ ]},
+ {id:'bed3',e:'3️⃣',name:{en:'Bedroom 3',es:'Recámara 3'},sub:{en:'Bottom floor',es:'Planta baja'},color:'beige',chips:[
+  {e:'🛏️',n:'✓',t:{en:sw('beige')+'Beige sheets',es:sw('beige')+'Sábanas beige'}},
+  ...bath('beige','beige','top'),
+  remotes(['fan','blinds'])
+ ],photos:[
+  ['bed3-made',{en:'Bed: finished, green blanket at the foot',es:'Cama: terminada, manta verde a los pies'}],
+  ['bed3-sheet',{en:'Beige fitted sheet',es:'Sábana ajustable beige'}],
+  ['bed3-bath',{en:'2 beige bath towels on the bar, mat on the tub',es:'2 toallas de baño beige en la barra, tapete en la tina'}],
+  ['bed3-vanity',{en:'Vanity + 1 extra toilet paper on top of the toilet',es:'Lavabo + 1 papel extra encima del inodoro'}]
+ ]},
+ {id:'half',e:'🚽',name:{en:'Half Bath',es:'Medio Baño'},sub:{en:'Marble powder room',es:'Baño de mármol'},chips:[
+  {e:'🖐️',n:'1',t:{en:sw('blue')+'Blue hand towel on the ring',es:sw('blue')+'Toalla de mano azul en el aro'}},
+  {e:'🧻',n:'1 + 1',t:{en:'Toilet paper: 1 on the holder, 1 extra on top of the toilet',es:'Papel higiénico: 1 en el soporte, 1 extra encima del inodoro'}}
+ ],photos:[
+  ['powder',{en:'Blue hand towel on the ring',es:'Toalla de mano azul en el aro'}],
+  ['powder-tp',{en:'1 extra toilet paper on top of the toilet',es:'1 papel extra encima del inodoro'}],
+  ['tp-fold',{en:'Every bathroom: fold the end to a point',es:'Todos los baños: doble la punta del papel'}]
+ ]},
+ {id:'supplies',e:'🔒',name:{en:'Supplies',es:'Suministros'},photos:[
+  ['lock',{en:'Lock: 000, then slide the red button down',es:'Candado: 000, luego deslice el botón rojo'}],
+  ['cab-kitchen',{en:'Kitchen cabinets: cleaners, refills, Keurig pods',es:'Gabinetes de cocina: limpiadores, repuestos, cápsulas'}],
+  ['cab-towels',{en:'Primary suite top cabinet: towels',es:'Gabinete de arriba (recámara principal): toallas'}],
+  ['cab-linens',{en:'Primary suite bottom cabinet: sheets. Top = primary (blue) + detergent, middle = bedroom 2, bottom = bedroom 3',es:'Gabinete de abajo: sábanas. Arriba = principal (azul) + detergente, medio = recámara 2, abajo = recámara 3'}],
+  ['closet-iron',{en:'Iron and ironing board',es:'Plancha y burro de planchar'}]
+ ]},
+ {id:'finish',e:'✅',name:{en:'Finish',es:'Terminar'},rows:[
+  {e:'🧺',t:{en:'Fold sheets and towels, put back in the primary suite cabinets',es:'Doble sábanas y toallas, guárdelas en los gabinetes de la recámara principal'}},
+  {e:'🫧',t:{en:'Leave the washer door a little open',es:'Deje la puerta de la lavadora un poco abierta'}},
+  {e:'🗑️',t:{en:'All trash to the garage bins. Tuesday night: bins to the curb',es:'Toda la basura a los botes del garaje. Martes en la noche: botes a la calle'}},
+  {e:'❄️',t:{en:'A/C: 76',es:'Aire acondicionado: 76'}},
+  {e:'💡',t:{en:'Lights, TV, and fireplaces off',es:'Apague luces, TV y chimeneas'}},
+  {e:'🪟',t:{en:'Windows and garage closed',es:'Ventanas y garaje cerrados'}},
+  {e:'🔐',t:{en:'Lock the front door: press ✓ on the keypad',es:'Cierre la puerta: presione ✓ en el teclado'}},
+  {e:'📷',t:{en:'Text Justin a photo of every room',es:'Mande a Justin una foto de cada cuarto'}}
+ ],photos:[
+  ['trash-bins',{en:'Tuesday night: exit the garage, turn right, bins at the curb',es:'Martes en la noche: salga del garaje, a la derecha, botes en la calle'}]
+ ]}
 ];
 // ===== END CONTENT =====
 
-const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\[ADD[^\]]*\]/g,m=>'<span class="todo">'+m+'</span>');
-let store={};try{store=JSON.parse(localStorage.getItem('gh-clean2')||'{}')}catch(e){}
-const save=()=>{try{localStorage.setItem('gh-clean2',JSON.stringify(store))}catch(e){}};
-const secs=document.getElementById('sections');
-GUIDE.forEach(s=>{
-  const el=document.createElement('section');el.id=s.id;
-  el.innerHTML='<div class="sh"><h2>'+esc(s.title)+'</h2><span class="count" data-c="'+s.id+'"></span></div>'+
-   (s.note?'<div class="note">'+esc(s.note)+'</div>':'')+
-   '<ul class="cl">'+s.items.map((t,i)=>{const k=s.id+'-'+i;return '<li><label><input type="checkbox" data-k="'+k+'"'+(store[k]?' checked':'')+'><span>'+esc(t)+'</span></label></li>'}).join('')+'</ul>';
-  secs.appendChild(el);
-});
-const rs=document.createElement('section');rs.id='rooms';
-rs.innerHTML='<div class="sh"><h2>Room Setups</h2></div><div class="note">What a finished room looks like. Swipe through the photos and match them every turnover. Tap a photo to enlarge.</div>'+ROOMS.map(r=>'<div class="room" id="'+r.id+'"><h3><i style="background:'+r.color+'"></i>'+r.name+'</h3>'+(r.sub?'<div class="rs">'+r.sub+'</div>':'')+'<ul>'+r.linens.map(l=>'<li>'+esc(l)+'</li>').join('')+'</ul><div class="gal">'+r.photos.map(p=>'<figure><img src="img/'+p[0]+'.jpg" alt="'+p[1]+'" loading="lazy"><figcaption>'+esc(p[1])+'</figcaption></figure>').join('')+'</div></div>').join('');
-secs.insertBefore(rs,document.getElementById('arrive'));
-const lb=document.createElement('div');lb.className='lb';lb.innerHTML='<img alt="">';document.body.appendChild(lb);
-document.addEventListener('click',e=>{const im=e.target.closest('.gal img');if(im){lb.firstChild.src=im.src;lb.classList.add('show');}else if(e.target.closest('.lb'))lb.classList.remove('show');});
-const loc=document.createElement('section');loc.id='where';
-loc.innerHTML='<div class="sh"><h2>Where Things Are</h2></div><table class="loc">'+LOCATIONS.map(r=>'<tr><td>'+esc(r[0])+'</td><td>'+esc(r[1])+'</td></tr>').join('')+'</table>';
-secs.appendChild(loc);
-document.getElementById('tiles').innerHTML=GUIDE.map(s=>'<a class="tile" href="#'+s.id+'"><i data-lucide="'+s.icon+'"></i><span>'+esc(s.title.replace(/^\d+\.\s*/,''))+'</span><small data-t="'+s.id+'"></small></a>').join('')+'<a class="tile" href="#rooms"><i data-lucide="image"></i><span>Room Setups</span></a><a class="tile" href="#where"><i data-lucide="map-pin"></i><span>Where Things Are</span></a>';
-function update(){
-  let all=0,done=0;
-  GUIDE.forEach(s=>{const n=s.items.length,d=s.items.filter((_,i)=>store[s.id+'-'+i]).length;all+=n;done+=d;
-    const t=d+' / '+n;document.querySelector('[data-c="'+s.id+'"]').textContent=t;document.querySelector('[data-t="'+s.id+'"]').textContent=d===n?'✓':t;});
-  const p=Math.round(done/all*100);document.getElementById('prog').textContent=p+'% done';document.getElementById('pfill').style.width=p+'%';
+let lang='en';try{lang=new URLSearchParams(location.search).get('lang')||localStorage.getItem('gh-lang')||'en'}catch(e){}
+if(!UI[lang])lang='en';
+let store={};try{store=JSON.parse(localStorage.getItem('gh-clean3')||'{}')}catch(e){}
+const save=()=>{try{localStorage.setItem('gh-clean3',JSON.stringify(store))}catch(e){}};
+const src=p=>'img/'+p+'.jpg';
+const keys=[];AREAS.forEach(a=>{(a.rows||[]).forEach((r,i)=>keys.push(a.id+'-r'+i));(a.photos||[]).forEach((p,i)=>keys.push(a.id+'-p'+i))});
+
+function render(){
+ document.documentElement.lang=lang;
+ document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===lang));
+ const u=UI[lang];
+ document.getElementById('codes').innerHTML=
+  '<div class="code"><div class="e">🔒</div><div class="n">000</div><div class="t">'+u.codeCab+'</div></div>'+
+  '<div class="code"><div class="e">🚪</div><div class="n">1237 #</div><div class="t">'+u.codeCloset+'</div></div>';
+ document.getElementById('nav').innerHTML=AREAS.map(a=>'<a href="#'+a.id+'" data-a="'+a.id+'"><b>'+a.e+'</b>'+a.name[lang]+'</a>').join('');
+ document.getElementById('areas').innerHTML=AREAS.map(a=>{
+  let h='<section id="'+a.id+'"><div class="sh"><span class="ic">'+a.e+'</span><div><h2>'+a.name[lang]+'</h2>'+(a.sub?'<small>'+a.sub[lang]+'</small>':'')+'</div></div>';
+  if(a.chips)h+='<div class="chips">'+a.chips.map(c=>'<div class="chip"><span class="e">'+c.e+'</span><span class="n">'+c.n+'</span><span class="t">'+c.t[lang]+'</span></div>').join('')+'</div>';
+  if(a.rows)h+='<div class="rows">'+a.rows.map((r,i)=>{const k=a.id+'-r'+i;return '<div class="row'+(store[k]?' is-done':'')+'" data-k="'+k+'"><span class="e">'+r.e+'</span><span class="t">'+r.t[lang]+'</span><span class="ck">✓</span></div>'}).join('')+'</div>';
+  if(a.photos)h+='<div class="photos">'+a.photos.map((p,i)=>{const k=a.id+'-p'+i;return '<div class="ph'+(store[k]?' is-done':'')+'" data-k="'+k+'"><span class="num">'+(i+1)+' / '+a.photos.length+'</span><img loading="lazy" src="'+src(p[0])+'" alt="'+p[1][lang].replace(/"/g,'')+'" data-a="'+a.id+'" data-i="'+i+'"><div class="cap"><span class="t">'+p[1][lang]+'</span><span class="ck">✓</span></div></div>'}).join('')+'</div>';
+  return h+'</section>';
+ }).join('');
+ document.getElementById('reset').textContent='↺ '+u.reset;
+ document.getElementById('footT').textContent=u.foot;
+ progress();
 }
-document.addEventListener('change',e=>{const k=e.target.dataset&&e.target.dataset.k;if(!k)return;store[k]=e.target.checked;save();update();});
-document.getElementById('resetBtn').addEventListener('click',()=>{store={};save();document.querySelectorAll('ul.cl input').forEach(i=>i.checked=false);update();scrollTo(0,0);});
-document.getElementById('printBtn').addEventListener('click',()=>{try{window.print()}catch(e){}});
-document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;const t=document.getElementById(a.getAttribute('href').slice(1));if(!t)return;e.preventDefault();scrollTo({top:t.getBoundingClientRect().top+scrollY-70,behavior:'auto'});});
-try{lucide.createIcons()}catch(e){}
-update();
+function progress(){
+ const d=keys.filter(k=>store[k]).length,pct=Math.round(d/keys.length*100);
+ document.getElementById('prog').textContent=pct+'%';
+ document.getElementById('pfill').style.width=pct+'%';
+ AREAS.forEach(a=>{const ks=keys.filter(k=>k.startsWith(a.id+'-'));const el=document.querySelector('.nav a[data-a="'+a.id+'"]');if(el)el.classList.toggle('done',ks.length&&ks.every(k=>store[k]))});
+}
+document.addEventListener('click',e=>{
+ const lb=e.target.closest('.lang button');if(lb){lang=lb.dataset.l;try{localStorage.setItem('gh-lang',lang)}catch(_){}render();return}
+ const img=e.target.closest('.ph img');if(img){openLB(img.dataset.a,+img.dataset.i);return}
+ const t=e.target.closest('.row,.ph .cap');if(t){const box=t.closest('[data-k]');const k=box.dataset.k;store[k]=!store[k];if(!store[k])delete store[k];save();box.classList.toggle('is-done',!!store[k]);progress();return}
+ if(e.target.id==='reset'){if(confirm(UI[lang].confirm)){store={};save();render();scrollTo(0,0)}}
+});
+// highlight current area in nav
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){document.querySelectorAll('.nav a').forEach(a=>a.classList.toggle('on',a.dataset.a===x.target.id));const on=document.querySelector('.nav a.on');on&&on.scrollIntoView({inline:'center',block:'nearest'})}}),{rootMargin:'-40% 0px -55% 0px'});
+const watch=()=>document.querySelectorAll('section').forEach(s=>io.observe(s));
+
+// lightbox
+let LA=null,LI=0;const lb=document.getElementById('lb');
+function openLB(a,i){LA=AREAS.find(x=>x.id===a);LI=i;showLB();lb.classList.add('open');document.body.style.overflow='hidden'}
+function showLB(){const p=LA.photos[LI];lb.querySelector('img').src=src(p[0]);document.getElementById('lbCap').textContent=p[1][lang];document.getElementById('lbCnt').textContent=(LI+1)+' / '+LA.photos.length;
+ document.getElementById('lbP').style.visibility=LI>0?'visible':'hidden';document.getElementById('lbN').style.visibility=LI<LA.photos.length-1?'visible':'hidden'}
+function closeLB(){lb.classList.remove('open');document.body.style.overflow=''}
+document.getElementById('lbX').onclick=closeLB;
+document.getElementById('lbP').onclick=()=>{if(LI>0){LI--;showLB()}};
+document.getElementById('lbN').onclick=()=>{if(LI<LA.photos.length-1){LI++;showLB()}};
+let sx=null;const li=document.getElementById('lbImg');
+li.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+li.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;sx=null;if(dx<-50)document.getElementById('lbN').click();else if(dx>50)document.getElementById('lbP').click()});
+document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowRight')document.getElementById('lbN').click();if(e.key==='ArrowLeft')document.getElementById('lbP').click()});
+
+const _r=render;render=function(){_r();watch()};
+render();
 </script>
 </body>
 </html>
