@@ -120,7 +120,7 @@ section{padding:22px 0 6px}
 </header>
 
 <main class="wrap" id="top">
-  <div class="codes" id="codes"></div>
+  <div class="codes" id="codes" style="scroll-margin-top:140px"></div>
   <div id="areas"></div>
   <button class="reset" id="reset"></button>
   <div class="foot"><div class="s">Thank you</div><span id="footT"></span></div>
@@ -262,7 +262,7 @@ function render(){
   '<div class="code door"><div class="e">🏠</div><div class="n">1237</div><div class="t">'+u.codeDoor+'</div></div>'+
   '<div class="code"><div class="e">🔒</div><div class="n">000</div><div class="t">'+u.codeCab+'</div></div>'+
   '<div class="code"><div class="e">🚪</div><div class="n">1237 #</div><div class="t">'+u.codeCloset+'</div></div>';
- document.getElementById('nav').innerHTML=AREAS.map(a=>'<a href="#'+a.id+'" data-a="'+a.id+'"><b>'+a.e+'</b>'+a.name[lang]+'</a>').join('');
+ document.getElementById('nav').innerHTML='<a href="#codes" data-a="codes"><b>🔑</b>'+(lang==='es'?'Códigos':'Codes')+'</a>'+AREAS.map(a=>'<a href="#'+a.id+'" data-a="'+a.id+'"><b>'+a.e+'</b>'+a.name[lang]+'</a>').join('');
  document.getElementById('areas').innerHTML=AREAS.map(a=>{
   let h='<section id="'+a.id+'"><div class="sh"><span class="ic">'+a.e+'</span><div><h2>'+a.name[lang]+'</h2>'+(a.sub?'<small>'+a.sub[lang]+'</small>':'')+'</div></div>';
   if(a.chips)h+='<div class="chips">'+a.chips.map(c=>'<div class="chip"><span class="e">'+c.e+'</span><span class="n">'+c.n+'</span><span class="t">'+c.t[lang]+'</span></div>').join('')+'</div>';
