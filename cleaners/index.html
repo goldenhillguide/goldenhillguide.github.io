@@ -143,9 +143,9 @@ const sw=c=>'<span class="sw" style="background:'+C[c]+'"></span>';
 
 const UI={
  en:{done:'done',reset:'Start a new clean',foot:'Questions? Text Justin.',confirm:'Clear all checkmarks?',
-  codeDoor:'Front door keypad',codeCab:'All 4 supply cabinets, then slide the red button down',codeCloset:'Bottom floor closet: toilet paper, paper towels, paint'},
+  codeDoor:'Front door: use the code Justin texts you',codeCab:'All 4 supply cabinets, then slide the red button down',codeCloset:'Bottom floor closet: toilet paper, paper towels, paint'},
  es:{done:'listo',reset:'Empezar nueva limpieza',foot:'¿Preguntas? Mande mensaje a Justin.',confirm:'¿Borrar todas las marcas?',
-  codeDoor:'Teclado de la puerta principal',codeCab:'Los 4 gabinetes, luego deslice el botón rojo hacia abajo',codeCloset:'Clóset planta baja: papel higiénico, toallas de papel, pintura'}
+  codeDoor:'Puerta principal: use el código que Justin le manda por mensaje',codeCab:'Los 4 gabinetes, luego deslice el botón rojo hacia abajo',codeCloset:'Clóset planta baja: papel higiénico, toallas de papel, pintura'}
 };
 
 // Bathroom standard (3 full baths)
@@ -259,7 +259,7 @@ function render(){
  document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===lang));
  const u=UI[lang];
  document.getElementById('codes').innerHTML=
-  '<div class="code door"><div class="e">🏠</div><div class="n">1237</div><div class="t">'+u.codeDoor+'</div></div>'+
+  '<div class="code door"><div class="e">🏠</div><div class="n" style="font-size:20px;letter-spacing:0">📱</div><div class="t">'+u.codeDoor+'</div></div>'+
   '<div class="code"><div class="e">🔒</div><div class="n">000</div><div class="t">'+u.codeCab+'</div></div>'+
   '<div class="code"><div class="e">🚪</div><div class="n">1237 #</div><div class="t">'+u.codeCloset+'</div></div>';
  document.getElementById('nav').innerHTML='<a href="#codes" data-a="codes"><b>🔑</b>'+(lang==='es'?'Códigos':'Codes')+'</a>'+AREAS.map(a=>'<a href="#'+a.id+'" data-a="'+a.id+'"><b>'+a.e+'</b>'+a.name[lang]+'</a>').join('');
